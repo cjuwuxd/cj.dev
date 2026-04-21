@@ -1,0 +1,171 @@
+*{
+    padding: 1;
+    margin: 0 ;
+    
+}
+
+html, body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: larger;
+    background-color: rgb(234, 238, 255);
+    margin: 1;
+}
+
+button {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: larger;
+    font-weight: bolder;
+    background-color: white;
+    border: solid;
+}
+/* navigation bar */
+
+.navigation {
+    list-style: none;
+    display: flex;
+    background-color: white;
+    padding: 0;
+    margin: 1;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 4px solid;
+    
+}
+
+.navigation li a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    transition: letter-spacing 0.5s;
+}
+
+.navigation li a:hover {
+    letter-spacing: 3px;
+}
+
+.navigation li a:active {
+    display: block;
+    color: pink;
+}
+
+.leftnav, .centernav, .rightnav {
+    list-style-type: none;
+}
+
+.leftnav a{
+    display: flex;
+    padding: 5px; 
+    color: black;
+    text-decoration: none;
+    transition: letter-spacing 0.5s;
+    
+}
+
+.leftnav a:hover{
+    letter-spacing: 0.1em;
+    color: aquamarine;
+    cursor: help;
+}
+
+.centernav li {
+    
+    justify-content: center;
+    display: inline-table;
+}
+
+.login-btn {
+    border: none;
+    visibility: collapse;
+}
+
+.login-btn:hover {
+    border: 4px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+/* main stuff */
+
+h1 {
+    justify-content: center;
+    display: flex;
+    transition: color 0.3s;
+}
+
+h1:hover {
+    justify-content: center;
+    display: flex;
+    color: aquamarine;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 20px;
+    justify-content: center;
+    display: flex;
+    line-height: 50px;
+}
+
+h2:hover {
+    font-size: 20px;
+    justify-content: center;
+    display: flex;
+    line-height: 50px;
+    text-decoration: underline;
+    cursor: default;
+}
+
+p {
+    line-height: 25px;
+    font-size: 16px;
+    justify-content: flex-start;
+    cursor: default;
+    
+}
+
+.settings {
+    font-size: large;
+    line-height: 40px;
+    margin: 10px 5px ;
+    transition: letter-spacing 0.5s;
+}
+
+.settings:hover {
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.main-box {
+    justify-self: center;
+    display: flex;
+    width: 670px;
+    height: fit-content;
+    background-color: white;
+    border: 5px solid;
+    padding: 20px;
+    margin: 10px;
+    
+}
+
+/* animations */
+.moveRightanimation {
+    
+    animation: moveRight 0.1s linear infinite; iteration-count direction fill-mode;
+}
+
+@keyframes moveRight {
+    0% { transform: translateX(-100%); }
+  100% { transform: translateX(10000px); }
+}
+
