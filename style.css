@@ -46,7 +46,7 @@ button {
 
 .navigation li a:active {
     display: block;
-    color: pink;
+    color: rgb(252, 188, 199);
 }
 
 .leftnav, .centernav, .rightnav {
