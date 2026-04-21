@@ -5,14 +5,14 @@
 }
 
 html, body {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Comic Sans MS" ,"Comic Neue", cursive;
     font-size: larger;
     background-color: rgb(234, 238, 255);
     margin: 1;
 }
 
 button {
-    font-family: "Comic Neue", "Comic Sans", cursive;
+    font-family: "Comic Sans MS", "Comic Neue", cursive;
     font-size: larger;
     font-weight: bolder;
     background-color: white;
