@@ -4,26 +4,67 @@
     
 }
 
+:root {
+    --bg: white;
+    --webbg: rgb(234, 238, 255);
+    --text: black;
+}
+
 html, body {
     font-family: "Comic Sans MS" ,"Comic Neue", cursive;
     font-size: larger;
-    background-color: rgb(234, 238, 255);
+    background-color: var(--webbg);
+    color: var(--text);
+    transition: 0.67s ;
     margin: 1;
+}
+
+body.dark {
+    --bg: black;
+    --webbg: rgb(24, 27, 38);
+    --text: white;
+
 }
 
 button {
     font-family: "Comic Sans MS", "Comic Neue", cursive;
     font-size: larger;
     font-weight: bolder;
-    background-color: white;
+    background-color: var(--bg);
     border: solid;
 }
 /* navigation bar */
 
+@media (max-width: 768px) {
+    #navbar{
+        display: none;
+    }
+
+    #sidebar{
+        display: none;
+        }
+    #content {
+        padding: 5px;
+        margin: 5px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #mainbutton{
+        justify-content: center;
+        display: flexbox;
+        text-align: center;
+        align-items: center;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+    
+}
+
 .navigation {
     list-style: none;
     display: flex;
-    background-color: white;
+    background-color: var(--bg);
     padding: 0;
     margin: 1;
     justify-content: space-between;
@@ -34,7 +75,7 @@ button {
 
 .navigation li a {
     display: block;
-    color: black;
+    color: var(--text);
     text-decoration: none;
     padding: 10px;
     transition: letter-spacing 0.5s;
@@ -42,11 +83,13 @@ button {
 
 .navigation li a:hover {
     letter-spacing: 3px;
+    color: rgb(252, 188, 199);
+    font-weight: bolder;
 }
 
 .navigation li a:active {
     display: block;
-    color: rgb(252, 188, 199);
+    color: rgb(255, 87, 115);
 }
 
 .leftnav, .centernav, .rightnav {
@@ -54,12 +97,13 @@ button {
 }
 
 .leftnav a{
-    display: flex;
-    padding: 5px; 
-    color: black;
+    display: block;
+    padding: 10px;
+    margin: 0;
+    margin-left: auto; 
+    color: var(--text);
     text-decoration: none;
     transition: letter-spacing 0.5s;
-    
 }
 
 .leftnav a:hover{
@@ -69,20 +113,19 @@ button {
 }
 
 .centernav li {
-    
     justify-content: center;
     display: inline-table;
 }
 
 .login-btn {
     border: none;
-    visibility: collapse;
+    visibility: visible;
 }
 
 .login-btn:hover {
     border: 4px;
-    color: white;
-    background-color: black;
+    color: var(--text);
+    background-color: var(--bg);
     cursor: pointer;
 }
 
@@ -140,23 +183,77 @@ p {
 
 
 .footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-}
-
-.main-box {
-    justify-self: center;
+    list-style: none;
     display: flex;
-    width: 670px;
-    height: fit-content;
-    background-color: white;
-    border: 5px solid;
-    padding: 20px;
-    margin: 10px;
+    background-color: var(--bg);
+    padding: 0;
+    margin: 1;
+    justify-content: space-between;
+    gap: 20px;
+    
     
 }
+
+.footer.content {
+    background-color: var(--bg);
+    border-top: 3px solid;
+    
+    
+}
+
+.footer.content li a {    
+    display: inline-flex;
+    color: var(--text);
+    text-decoration: none;
+    padding: 10px;
+    transition: letter-spacing 0.5s;
+    list-style-type: none;
+    
+    
+}
+
+.footer.content li a:hover {    
+    letter-spacing: 3px;
+    font-weight: bolder;
+    
+}
+
+.social.instagram:hover{
+    color: rgb(250, 155, 171);
+}
+
+.social.twitter:hover{
+    color: rgb(83, 195, 232);
+}
+
+
+.container-box {
+    display: flex;
+}
+
+.child-box {
+    justify-self: right;
+    float: left;
+    display: flex;
+    width: 700px;
+    height: fit-content;
+    background-color: var(--bg);
+    border: 5px solid;
+    padding: 15px;
+    margin: 10px;
+    margin-left: 15%;
+}
+
+.child-box.sidebar{
+    display: block;
+    padding: 15px;
+    width: fit-content;
+    justify-content: flex-end;
+    height: fit-content;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
 
 /* animations */
 .moveRightanimation {

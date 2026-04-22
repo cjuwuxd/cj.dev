@@ -3,9 +3,11 @@
 <head>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap">
+<script src="script.js" defer> </script>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 </head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    
+   
     <link rel="icon" type="image/x-icon" href="logo.svg">
     <title> cj.dev </title>
 
@@ -13,10 +15,10 @@
         <header class="header"></header>
        
         <nav class="navigation">
-            <ul class="leftnav">
-                <a href="#home"> cjuwuxd </a>
+            <ul id="mainbutton" class="leftnav">
+                <a href="#home"> cjuwuxdev </a>
             </ul>
-            <ul class="centernav">
+            <ul id="navbar" class="centernav">
                 
                 <li> <a href="\games"> games </a></li>
                 <li> <a href="\projects"> projects </a></li>
@@ -26,7 +28,7 @@
                 
             </ul>
             <ul class="rightnav">
-                <button class="login-btn"> LOGIN </button> 
+                <button class="login-btn">  </button> 
             </ul>
                     
             
@@ -37,47 +39,57 @@
             <h2> non-professional programming enthusiast</h2>
             
         </div>
-        <div class="main-box"> 
-            <p style="font-weight: bold;"> Welcome to my website! <br> <br>
-                Where I learn to code random stuff until I get a job or something like that.
-                This website was created for me to practice coding "again", and learn new 
-                things. <br> <br>
-                
-                This website will contain all my <i> wild experiments</i> in the world of programming
-                from websites, computer vision, motion sensors, random abandoned games, and ai girlfriends.<br> <br>
-                
+        <div class="container-box">
+            <div id="content" class="child-box main"> 
+                    <p style="font-weight: bold;"> Welcome to my website! <br> <br>
+                        Where I learn to code random stuff until I get a job or something like that.
+                        This website was created for me to practice coding "again", and learn new 
+                        things. <br> <br>
+                        
+                        This website will contain all my <i> wild experiments</i> in the world of programming
+                        from websites, computer vision, motion sensors, random abandoned games, and ai girlfriends.<br> <br>
+                        
 
-                Prepare for cool shit you probably seen or never seen before but I made myself. <br> <br>
-                
+                        Prepare for cool shit you probably seen or never seen before but I made myself. <br> <br>
+                        
+                        
+                    </p>
+            </div>
+            <div id="sidebar" class="child-box sidebar">
                 <i style="font-size: 25px;"> Website Settings </i> <br>
-                <a class="settings"> Music </a> <br>
-                <a class="settings"> Sounds </a> <br>
-                <a class="settings"> Theme </a>
-            </p>
-        </div>
-
-        <div class="main-box">
-            <h1>  </h1>
-            <p id="home"style="font-weight: bold;"> <i> #about self </i> <br>
-                class cjbriones(): <br>
-                &emsp; def _init_ (self, dreams): <br>
-                &emsp;&emsp;  self.alive = True <br>
-                &emsp; &emsp; self.age = 18 <br>
-                &emsp; &emsp; self.skills = [coding, gaming, eating, mathing] <br> <br> 
-                &emsp; &emsp; while alive: <br>
-                &emsp; &emsp; &emsp; if dreams == True: <br>
-                &emsp;&emsp;&emsp; &emsp; &emsp; achieveDreams(using=skills)
-
-            </p>
-            <div>
+                    <a class="settings"> Music </a> <br>
+                    <a class="settings"> Sounds </a> <br>
+                    <a id="theme" class="settings"> Theme </a>
             </div>
         </div>
-        
-        
-
+        <div class="container-box">
+            <div id="content" class="child-box main">
+                
+                <h1>  </h1>
+                <p id="home"style="font-weight: bold;"> <i> #about self </i> <br>
+                    class cjbriones(): <br>
+                    &emsp; def _init_ (self, dreams): <br>
+                    &emsp;&emsp;  self.alive = True <br>
+                    &emsp; &emsp; self.age = 18 <br>
+                    &emsp; &emsp; self.skills = [coding, gaming, eating, mathing] <br> <br> 
+                    &emsp; &emsp; while alive: <br>
+                    &emsp; &emsp; &emsp; if dreams == True: <br>
+                    &emsp;&emsp;&emsp; &emsp; &emsp; achieveDreams(using=skills)
+                
+                </p>
+            </div>
+        </div>     
+         
     </body>
 
-    <footer class="footer">
-       socials: 
+    <footer class="footer content">
+        
+            <ul class="centernav"> find me here: 
+                <li> <a class="social github" href="https://github.com/cjuwuxd"> github </a></li>
+                <li> <a class="social instagram" href="https://www.instagram.com/cjuwuxd/"> instagram </a></li>
+                <li> <a class="social twitter" href="https://x.com/cjuwuxd"> twitter </a></li>
+            </ul>
+            <ul class="rightnav">  </ul>
+        
     </footer>
 </html>
