@@ -20,6 +20,8 @@ html, body {
     margin: 1;
     min-height: 100vh;
     flex: 1;
+    display-flex: column;
+    display: flex;
 }
 
 body.dark {
