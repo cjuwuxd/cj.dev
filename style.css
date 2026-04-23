@@ -8,6 +8,7 @@
     --bg: white;
     --webbg: rgb(234, 238, 255);
     --text: black;
+    --sidebarcolor: rgb(255, 200, 209);
 }
 
 html, body {
@@ -23,6 +24,7 @@ body.dark {
     --bg: black;
     --webbg: rgb(24, 27, 38);
     --text: white;
+    --sidebarcolor: hsl(350, 78%, 60%);
 
 }
 
@@ -50,13 +52,18 @@ button {
         margin-right: auto;
     }
     #mainbutton{
-        justify-content: center;
-        display: flexbox;
-        text-align: center;
-        align-items: center;
+        justify-content: left;
+        display: block;
+        text-align: left;
+        align-items: left;
         height: auto;
-        margin: 0;
+        margin-left: auto;
         padding: 0;
+        
+    }
+
+    #loginnav {
+        display: ;
     }
     
 }
@@ -73,8 +80,13 @@ button {
     
 }
 
+.navigation ul {
+    flex: 1;
+    display: flex;
+}
+
 .navigation li a {
-    display: block;
+    display: flex;
     color: var(--text);
     text-decoration: none;
     padding: 10px;
@@ -104,6 +116,7 @@ button {
     color: var(--text);
     text-decoration: none;
     transition: letter-spacing 0.5s;
+    flex: auto;
 }
 
 .leftnav a:hover{
@@ -112,11 +125,19 @@ button {
     cursor: help;
 }
 
-.centernav li {
+
+
+.centernav li{
     justify-content: center;
-    display: inline-table;
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    margin: 0;
+    padding: auto;
 }
 
+
+/* buttons */
 .login-btn {
     border: none;
     visibility: visible;
@@ -128,6 +149,94 @@ button {
     background-color: var(--bg);
     cursor: pointer;
 }
+
+/* hamburger sidebar */
+
+.hamburger-btn {
+    flex: auto;
+    display: inline-flex;
+    justify-content: right;
+    border: 0;
+    color: var(--text);
+}
+
+.hamburger-btn:hover {
+    flex: auto;
+    display: inline-flex;
+    justify-content: right;
+    border: 0;
+    color: aquamarine;
+}
+
+.hamburger {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--sidebarcolor);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.hamburger a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--text);
+    display: block;
+    transition: letter-spacing 0.3s;
+}
+
+.hamburger a:hover {
+    letter-spacing: 0.1em;
+
+}
+
+
+/*website settings modal popup */
+
+.popupwindow {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--bg);
+    background-color: rgba(0,0,0,0.5);
+    border: 5px var(--sidebarcolor);
+    transition: 1s;
+    
+    
+}
+
+.popupcontent {
+    margin: 15% auto;
+    padding: 20px;
+    background-color: var(--bg);
+    animation-name: slideIn;
+    animation-duration: 0.5s;
+    width: fit-content;
+    border: 5px solid;
+    border-radius: 10px;
+}
+
+.popupcontent.closing {
+    animation-name: slideIn;
+    animation-duration: 0.5s;
+    
+}
+
+.closebtn:hover{
+    cursor: pointer;
+    color: var(--webbg);
+}
+
 
 /* main stuff */
 
@@ -229,6 +338,7 @@ p {
 
 .container-box {
     display: flex;
+    
 }
 
 .child-box {
@@ -266,3 +376,7 @@ p {
   100% { transform: translateX(10000px); }
 }
 
+@keyframes slideIn {
+  from { transform: translateY(-300px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

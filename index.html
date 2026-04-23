@@ -27,12 +27,42 @@
                 <li> <a href="\help"> help </a></li>
                 
             </ul>
-            <ul class="rightnav">
-                <button class="login-btn">  </button> 
+            <ul id="loginnav" class="rightnav">
+                <button class="hamburger-btn" onclick="openHamburger()"> &#9776; </button>
             </ul>
                     
             
         </nav>
+        <div id="hamburgerbar" class="hamburger">
+            <a href="javascript:void(0)" class="close-hamburger" onclick="closeHamburger()"> &times; </a>
+            <a href="\games">games</a>
+            <a href="\projects">projects</a>
+            <a href="\tools">tools</a>
+            <a href="\blog">blog</a>
+            <a href="\help">help</a>
+            <a href="#" id="openSettings"> website settings </a> 
+                    
+
+
+        </div>
+        
+
+        <!--website settings modal popup */-->
+
+        <div id="settings-modal" class="popupwindow">
+            <div class="popupcontent"> 
+                <span class="closebtn" id="close"> &times; </span> 
+                    Website Settings <br>
+                    <a class="settings"> Music </a> <br>
+                    <a class="settings"> Sounds </a> <br>
+                    <a onclick="changeTheme()" class="settings"> Theme </a>
+            </div>
+        
+        </div>
+
+
+
+
         <div> 
             <p>   </p>
             <h1 class=""> Coding Random Stuff for Fun </h1>
@@ -59,8 +89,11 @@
                 <i style="font-size: 25px;"> Website Settings </i> <br>
                     <a class="settings"> Music </a> <br>
                     <a class="settings"> Sounds </a> <br>
-                    <a id="theme" class="settings"> Theme </a>
+                    <a onclick="changeTheme()" class="settings"> Theme </a>
             </div>
+        </div>
+        <div class="container-box"> 
+            
         </div>
         <div class="container-box">
             <div id="content" class="child-box main">
