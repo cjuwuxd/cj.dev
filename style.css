@@ -20,7 +20,7 @@ html, body {
     margin: 1;
     min-height: 100vh;
     flex: 1;
-    margin-bottom: 3%;
+    padding-bottom: 50px;
     background-color: var(--webbg);
     
 }
@@ -42,6 +42,8 @@ button {
     background-color: var(--bg);
     border: solid;
 }
+
+
 /* navigation bar */
 
 @media (max-width: 768px) {
@@ -67,10 +69,6 @@ button {
         margin-left: auto;
         padding: 0;
         
-    }
-
-    #loginnav {
-        display: ;
     }
     
 }
