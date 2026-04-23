@@ -6,19 +6,26 @@
 
 :root {
     --bg: white;
-    --webbg: rgb(234, 238, 255);
     --text: black;
     --sidebarcolor: rgb(255, 200, 209);
+    --webbg: rgb(234, 238, 255);
 }
 
 html, body {
+    
     font-family: "Comic Sans MS" ,"Comic Neue", cursive;
     font-size: larger;
-    background-color: var(--webbg);
     color: var(--text);
     transition: 0.67s ;
     margin: 1;
+    min-height: 100vh;
+    flex: 1;
+    margin-bottom: 3%;
+    background-color: var(--webbg);
+    
 }
+
+
 
 body.dark {
     --bg: black;
@@ -294,18 +301,22 @@ p {
 .footer {
     list-style: none;
     display: flex;
+    position: fixed;
+    width: 100%;
     background-color: var(--bg);
     padding: 0;
     margin: 1;
     justify-content: space-between;
-    gap: 20px;
-    
+    gap: 30px;
+    bottom: 0;
+    left: 0;
+    height: 50px;
     
 }
 
 .footer.content {
     background-color: var(--bg);
-    border-top: 3px solid;
+    border-top: 5px solid;
     
     
 }
