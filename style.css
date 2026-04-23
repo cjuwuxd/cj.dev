@@ -18,6 +18,8 @@ html, body {
     color: var(--text);
     transition: 0.67s ;
     margin: 1;
+    min-height: 100vh;
+    flex: 1;
 }
 
 body.dark {
