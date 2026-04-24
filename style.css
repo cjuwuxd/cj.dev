@@ -7,7 +7,7 @@
 :root {
     --bg: white;
     --text: black;
-    --sidebarcolor: rgb(255, 200, 209);
+    --sidebarcolor: rgba(255, 200, 209, 0.9);
     --webbg: rgb(234, 238, 255);
 }
 
@@ -32,7 +32,7 @@ body.dark {
     --bg: black;
     --webbg: rgb(24, 27, 38);
     --text: white;
-    --sidebarcolor: hsl(350, 78%, 60%);
+    --sidebarcolor: hsla(350, 78%, 60%, 0.95);
 }
 
 
@@ -47,18 +47,50 @@ button {
 
 
 /* navigation bar */
-
-
-
 .navigation {
-    list-style: none;
     display: flex;
+    align-items: center;
     background-color: var(--bg);
-    padding: 0;
-    margin: 1;
+    padding: 10px;
+    margin: 0;
     justify-content: space-between;
-    gap: 20px;
+    gap: 25px;
     border-bottom: 4px solid;
+    
+}
+
+
+.leftnav, .rightnav {
+    flex: 1;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rightnav{
+    justify-content: flex-end;
+}
+
+.centernav {
+    
+    flex: 0;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 5px;
+}
+
+.centernav li{
+    flex: 0;
+    justify-content: center;
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    align-items: center;
+    margin: 0;
+    padding: auto;
     
 }
 
@@ -86,9 +118,6 @@ button {
     color: rgb(255, 87, 115);
 }
 
-.leftnav, .centernav, .rightnav {
-    list-style-type: none;
-}
 
 .leftnav a{
     display: block;
@@ -109,14 +138,7 @@ button {
 
 
 
-.centernav li{
-    justify-content: center;
-    display: inline-block;
-    text-align: center;
-    align-items: center;
-    margin: 0;
-    padding: auto;
-}
+
 
 
 /* buttons */
