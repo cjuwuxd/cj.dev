@@ -324,6 +324,12 @@ p {
     font-weight: bolder;
 }
 
+.social.first {
+    transition: none;
+    letter-spacing: normal;
+    font-weight: normal;
+}
+
 .social.instagram:hover{
     color: rgb(250, 155, 171);
 }

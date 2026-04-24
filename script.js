@@ -1,3 +1,16 @@
+// Things I Want To Do
+// > finish home page
+// > add sound fx 
+// > start blog page, with functioning uploads, likes, comments, etc.
+// > add cool stuff to tools, (qrcode generator, sorting algorithms, mp3 converter)
+// > add basic games
+// > experiment with ads
+
+// Things to learn
+// > Git version control and commands
+// > learn java script syntax
+// > learn a javascript framework (react.js)
+
 
 
 /* theme changer */
@@ -61,5 +74,5 @@ window.onclick = function(event){
     }
 }
 
-// popup for socials
+
 
