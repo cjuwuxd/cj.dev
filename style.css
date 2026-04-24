@@ -11,20 +11,21 @@
     --webbg: rgb(234, 238, 255);
 }
 
-html, body {
-    
+body{
     font-family: "Comic Sans MS" ,"Comic Neue", cursive;
     font-size: larger;
     color: var(--text);
     transition: 0.67s ;
-    margin: 1;
     min-height: 100vh;
     flex: 1;
     padding-bottom: 50px;
-    background-color: var(--webbg);
-    
+    background-color: var(--webbg);    
 }
 
+/* this fixed bottom color bug */
+html {
+   background-color: var(--webbg);     
+}
 
 
 body.dark {
@@ -32,8 +33,9 @@ body.dark {
     --webbg: rgb(24, 27, 38);
     --text: white;
     --sidebarcolor: hsl(350, 78%, 60%);
-
 }
+
+
 
 button {
     font-family: "Comic Sans MS", "Comic Neue", cursive;
@@ -46,32 +48,7 @@ button {
 
 /* navigation bar */
 
-@media (max-width: 768px) {
-    #navbar{
-        display: none;
-    }
 
-    #sidebar{
-        display: none;
-        }
-    #content {
-        padding: 5px;
-        margin: 5px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #mainbutton{
-        justify-content: left;
-        display: block;
-        text-align: left;
-        align-items: left;
-        height: auto;
-        margin-left: auto;
-        padding: 0;
-        
-    }
-    
-}
 
 .navigation {
     list-style: none;
@@ -274,6 +251,19 @@ h2:hover {
     cursor: default;
 }
 
+h3 {
+    font-size: 17px;
+    justify-content: left;
+    display: flex;
+    line-height: auto;
+    align-items: left;
+}
+
+.mylist ul{
+    padding: 0;
+    margin: 0;
+}
+
 p {
     line-height: 25px;
     font-size: 16px;
@@ -295,6 +285,7 @@ p {
     font-weight: bold;
 }
 
+/* footer settings */
 
 .footer {
     list-style: none;
@@ -308,8 +299,6 @@ p {
     gap: 30px;
     bottom: 0;
     left: 0;
-    bottom: 0;
-    left: 0;
     height: 50px;
     
 }
@@ -321,21 +310,18 @@ p {
     
 }
 
-.footer.content li a {    
+.social {
     display: inline-flex;
     color: var(--text);
     text-decoration: none;
     padding: 10px;
     transition: letter-spacing 0.5s;
     list-style-type: none;
-    
-    
 }
 
-.footer.content li a:hover {    
+.social:hover {
     letter-spacing: 3px;
     font-weight: bolder;
-    
 }
 
 .social.instagram:hover{
@@ -346,7 +332,7 @@ p {
     color: rgb(83, 195, 232);
 }
 
-
+/* containers */
 .container-box {
     display: flex;
     
@@ -390,4 +376,51 @@ p {
 @keyframes slideIn {
   from { transform: translateY(-300px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+
+@media (max-width: 768px) {
+    #navbar{
+        display: none;
+    }
+
+    .child-box.main{
+        padding: 10px;
+        margin-left: 0px;
+        width: fit-content;
+    }
+    .child-box.sidebar{
+    
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .child-box.sidebar.websettings {
+        display: none;
+    }
+
+    #content {
+        padding: 5px;
+        margin: 5px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #mainbutton{
+        justify-content: left;
+        display: block;
+        text-align: left;
+        align-items: left;
+        height: auto;
+        margin-left: auto;
+        padding: 0;
+        
+    }
+    
+    .social.first {
+        display: none;
+    }
+
+
 }

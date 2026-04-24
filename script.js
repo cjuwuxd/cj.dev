@@ -60,3 +60,6 @@ window.onclick = function(event){
         settingsWindow.style.display = "none";
     }
 }
+
+// popup for socials
+
