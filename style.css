@@ -29,7 +29,7 @@ html {
 
 
 body.dark {
-    --bg: black;
+    --bg: rgb(25, 24, 25);
     --webbg: rgb(24, 27, 38);
     --text: white;
     --sidebarcolor: hsla(350, 78%, 60%, 0.95);
@@ -364,19 +364,22 @@ p {
 .container-box {
     display: flex;
     
+    justify-self: center;
+    
 }
+
+
 
 .child-box {
     justify-self: right;
     float: left;
     display: flex;
-    width: 700px;
+    width: 500px;
     height: fit-content;
     background-color: var(--bg);
     border: 5px solid;
     padding: 15px;
-    margin: 10px;
-    margin-left: 15%;
+    margin: 15px;
 }
 
 .child-box.sidebar{
@@ -390,10 +393,12 @@ p {
 }
 
 
+
+
 /* animations */
 .moveRightanimation {
     
-    animation: moveRight 0.1s linear infinite; iteration-count direction fill-mode;
+    animation: moveRight 0.1s linear infinite;
 }
 
 @keyframes moveRight {
@@ -445,10 +450,23 @@ p {
         padding: 0;
         
     }
-    
-    .social.first {
-        display: none;
+
+    .container-box > div {
+        flex-direction: column;
+        
     }
+    
+    .child-box.sidebar.projects{
+    width: 85%;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 10px;
+    
+    
+    }
+
 
 
 }

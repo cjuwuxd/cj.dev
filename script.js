@@ -5,6 +5,7 @@
 // > add cool stuff to tools, (qrcode generator, sorting algorithms, mp3 converter)
 // > add basic games
 // > experiment with ads
+// > add cool chat bot at bottom right
 
 // Things to learn
 // > Git version control and commands
@@ -16,6 +17,7 @@
 /* theme changer */
 
 const themebtn = document.getElementById("theme");
+const skrbl = document.getElementById("skrbl");
 
 if(localStorage.getItem("theme")== "dark"){
     document.body.classList.add("dark");
@@ -23,11 +25,13 @@ if(localStorage.getItem("theme")== "dark"){
 
 function changeTheme() {
     document.body.classList.toggle("dark");
-    console.log("hi")
+    
     if(document.body.classList.contains("dark")){
         localStorage.setItem("theme","dark");
+        skrbl.src = "assets/images/skrblai-dark.png"
     }else{
         localStorage.setItem("theme","light");
+        skrbl.src = "assets/images/skrblai.png"
     }
 }
 
