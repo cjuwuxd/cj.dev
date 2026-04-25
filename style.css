@@ -56,11 +56,10 @@ button {
     justify-content: space-between;
     gap: 25px;
     border-bottom: 4px solid;
-    
 }
 
 
-.leftnav, .rightnav {
+.leftnav{
     flex: 1;
     display: flex;
     list-style: none;
@@ -68,12 +67,14 @@ button {
     margin: 0;
 }
 
-.rightnav{
-    justify-content: flex-end;
+.rightnav {
+    display: flex;
+    padding: 0;
+    margin: 0;
 }
 
+
 .centernav {
-    
     flex: 0;
     display: flex;
     list-style: none;
@@ -83,7 +84,7 @@ button {
 }
 
 .centernav li{
-    flex: 0;
+    flex: 1;
     justify-content: center;
     display: flex;
     list-style-type: none;
@@ -95,8 +96,7 @@ button {
 }
 
 .navigation ul {
-    flex: 1;
-    display: flex;
+    flex: 2;
 }
 
 .navigation li a {
@@ -118,10 +118,8 @@ button {
     color: rgb(255, 87, 115);
 }
 
-
 .leftnav a{
     display: block;
-    padding: 10px;
     margin: 0;
     margin-left: auto; 
     color: var(--text);
@@ -130,14 +128,13 @@ button {
     flex: auto;
 }
 
+
+
 .leftnav a:hover{
     letter-spacing: 0.1em;
     color: aquamarine;
     cursor: help;
 }
-
-
-
 
 
 
