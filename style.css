@@ -567,6 +567,44 @@ textarea:focus,input:focus {
 .like-btn:hover { color: #e0245e; }
 .comment-btn:hover { color: var(--accent); }
 
+/* hover window cool */
+
+.hover-input {
+  position: relative; 
+  display: inline-block;
+  cursor: help;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.hover-output{
+    /* ty google gemini */
+  visibility: hidden;
+  opacity: 0;
+  
+  
+  position: absolute;
+  top: 120%; 
+  left: 50%;
+  transform: translate(-95%);
+  
+  
+  width: fit-content;
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border: 2px solid #ddd;
+  z-index: 10;
+  transition: opacity 0.3s ease; 
+}
+
+.hover-input:hover .hover-output {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* animations */
 .moveRightanimation {
     
