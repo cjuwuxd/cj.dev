@@ -10,6 +10,10 @@
     --text: black;
     --sidebarcolor: rgba(255, 200, 209, 0.9);
     --webbg: rgb(234, 238, 255);
+    --card-bg: #FFFFFF;     
+    --accent: #007AFF;      
+    --text-main: #1A1A1B;   
+    --text-muted: #65676B
 }
 
 body{
@@ -26,7 +30,8 @@ body{
 
 /* this fixed bottom color bug */
 html {
-   background-color: var(--webbg);     
+   background-color: var(--webbg);
+   scroll-behavior: smooth;     
 }
 
 
@@ -35,20 +40,71 @@ body.dark {
     --webbg: rgb(24, 27, 38);
     --text: white;
     --sidebarcolor: hsla(350, 78%, 60%, 0.95);
+    --bg: #0B0E11;       
+    --card-bg: #15191C;   
+    --accent: #3A8DFF;   
+    --text-main: #F5F5F7; 
+    --text-muted: #A0A0A5;
 }
 
 
 
 button {
     font-family: "Comic Sans MS", "Comic Neue", cursive;
-    font-size: larger;
-    font-weight: bolder;
+    font-size: x-large;
+    font-weight: normal;
+    background-color: hsla(350, 78%, 60%, 0);
+    border: none;
+}
+
+button :hover {
+    cursor: pointer;
+    color: pink;
+}
+
+button :active {
+    font-weight: bold;
+}
+
+.btn {
+    font-family: "Comic Sans MS", "Comic Neue", cursive;
+    font-size: x-large;
+    font-weight: normal;
+    background-color: hsla(350, 78%, 60%, 0);
+    border: none;
+    padding: 12px 24px;
+    margin: 20px;
+    border: none;
+    border-radius: 100px;
     background-color: var(--bg);
-    border: solid;
+    color: var(--text);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(110, 251, 218, 0.6);
+    
+}
+
+.btn:active {
+    transform: translateY(0);
+    background-color: hsla(128, 78%, 60%, 0.366);
 }
 
 
+
+
+
 /* navigation bar */
+
+nav {
+    position: sticky;
+    top:0;
+}
+
 .navigation {
     display: flex;
     align-items: center;
@@ -392,7 +448,124 @@ p {
 }
 
 
+#cjpanel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 15px;
+  field-sizing: content; 
+  border: 2px var(--bg);
+  border-radius: 8px;
+  font-family: "Comic Sans MS" ,"Comic Neue", cursive;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: none; 
+  background-color: var(--bg);      
+  display: block;
+  box-sizing: border-box; 
+}
+
+input {
+    background-color: var(--bg);
+    min-height: 50px;
+    padding: 12px;
+    field-sizing: content; 
+    border: 2px var(--text);
+    border-radius: 8px;
+    font-family: "Comic Sans MS" ,"Comic Neue", cursive;
+    font-size: 1.2rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    resize: none; 
+    width: 360px;           
+    display: flex;
+    box-sizing: border-box; 
+}
+
+
+textarea:focus,input:focus {
+  outline: none;
+  border-color: var(--sidebarcolor);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* blog styles */
+.admin {
+    padding: 10px;
+}
+
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  gap: 15px;            
+  max-width: 500px;
+  margin: 0 auto;         
+}
+
+
+
+.blog-feed {
+  max-width: 600px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post-card {
+  background: var(--bg);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+}
+
+.post-date {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.post-title {
+  margin: 8px 0;
+  font-size: 1.5rem;
+  color: var(--text-main);
+}
+
+.post-excerpt {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.post-footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 15px;
+}
+
+.like-btn, .comment-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.like-btn:hover { color: #e0245e; }
+.comment-btn:hover { color: var(--accent); }
 
 /* animations */
 .moveRightanimation {
@@ -467,6 +640,14 @@ p {
     
     }
 
+    h1, h2 {
+        width: 100%;      
+        text-align: center; 
+        margin: 0 auto;    
+    }
+
 
 
 }
+
+
