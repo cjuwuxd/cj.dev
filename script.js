@@ -64,25 +64,25 @@ function closeHamburger(){
 }
 
 /* popup window for settings */
+document.addEventListener("DOMContentLoaded", function(){
+    var settingsWindow = document.getElementById("settings-modal");
+    var openSettings = document.getElementById("openSettings");
+    var span = document.getElementById("close");
 
-var settingsWindow = document.getElementById("settings-modal");
-var openSettings = document.getElementById("openSettings");
-var span = document.getElementById("close");
-
-openSettings.onclick = function(){
-    settingsWindow.style.display = "block"
-}
-
-span.onclick = function(){
-    settingsWindow.style.display = "none"
-}
-
-window.onclick = function(event){
-    if (event.target==settingsWindow){
-        settingsWindow.style.display = "none";
+    openSettings.onclick = function(){
+        settingsWindow.style.display = "block"
     }
-}
 
+    span.onclick = function(){
+        settingsWindow.style.display = "none"
+    }
+
+    window.onclick = function(event){
+        if (event.target==settingsWindow){
+            settingsWindow.style.display = "none";
+        }
+    }
+});
 
 
 // Blog Logic
@@ -127,6 +127,37 @@ function publishPost() {
 
 //login btn
 function goToLogin() {
-    window.location.href = "/login";
+    window.location.href = "../login";
 }
+
+async function displayStreak() {
+    const username = '1049363268'; 
+    // Using a different proxy: corsproxy.io
+    const duolingoUrl = `https://www.duolingo.com/2017-06-30/users?username=CJuwuXD`;
+    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(duolingoUrl)}`;
+
+    try {
+        const response = await fetch(proxyUrl);
+        
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const data = await response.json();
+
+        console.log("Raw Data Received:", data);
+
+        if (data?.users?.length > 0) {
+            const streak = data.users[0].streak;
+            
+            
+            const el = document.getElementById('streak-number');
+            if (el) el.innerText = streak;
+        } else {
+            console.warn("User not found. Check if the username is correct.");
+        }
+    } catch (error) {
+        console.error("Fetch error:", error);
+    }
+}
+
+
 
