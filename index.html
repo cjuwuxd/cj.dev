@@ -3,7 +3,8 @@
 <head>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap">
-<script src="script.js" defer> </script>
+<script src="script.js"> </script>
+<script type="module" src="auth.js"> </script>
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 </head>
     
@@ -16,20 +17,21 @@
        
         <nav class="navigation">
             <ul id="mainbutton" class="leftnav">
-                <a href="index.html" class="hover-input"> cjuwuxdev 
+                <a href="#home" class="hover-input"> cjuwuxdev 
                     <span style="font-size: small;" class="hover-output"> vibe coding since 2023</span>
                 </a>
             </ul>
             <ul id="navbar" class="centernav">
                 
-                <li> <a href="games.html"> games </a></li>
-                <li> <a href="projects.html"> projects </a></li>
-                <li> <a href="tools.html"> tools </a></li>
-                <li> <a href="blog.html"> blog </a></li>
-                <li> <a href="help.html"> help </a></li>
+                <li> <a href="/games"> games </a></li>
+                <li> <a href="/projects"> projects </a></li>
+                <li> <a href="/tools"> tools </a></li>
+                <li> <a href="/blog"> blog </a></li>
+                <li> <a href="/help"> help </a></li>
                 
             </ul>
-            <ul id="loginnav" class="rightnav"> 
+            <ul class="rightnav"> 
+                <button id="loginBTN" onclick="goToLogin()"class="btn login"> login </button>
                 <button class="hamburger-btn" onclick="openHamburger()"> &#9776; </button>
             </ul>
 
@@ -38,11 +40,11 @@
         
         <div id="hamburgerbar" class="hamburger">
             <a href="javascript:void(0)" class="close-hamburger" onclick="closeHamburger()">  </a>
-            <a href="games.html">games</a>
-            <a href="projects.html">projects</a>
-            <a href="tools.html">tools</a>
-            <a href="blog.html">blog</a>
-            <a href="help.html">help</a>
+            <a href="/games">games</a>
+            <a href="/projects">projects</a>
+            <a href="/tools">tools</a>
+            <a href="/blog">blog</a>
+            <a href="/help">help</a>
             <a href="#" id="openSettings"> website settings </a> 
                     
 

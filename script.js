@@ -12,6 +12,10 @@
 // > learn java script syntax
 // > learn a javascript framework (react.js)
 
+// IMPORTANT ADMIN CHECKER
+
+
+
 
 
 /* theme changer */
@@ -119,4 +123,9 @@ function publishPost() {
 
 }
 
+
+//login btn
+function goToLogin() {
+    window.location.href = "/login";
+}
 

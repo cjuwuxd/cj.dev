@@ -6,7 +6,7 @@
     <script src="script.js" defer> </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cj.dev blog</title>
+    <title>cj.dev | games</title>
     <link rel="icon" type="image/x-icon" href="logo.svg">
 </head>
 <body>
@@ -18,13 +18,12 @@
                     <span style="font-size: small;" class="hover-output"> vibe coding since 2023</span>
                 </a>
             </ul>
-
             <ul id="navbar" class="centernav">
                 
-                <li> <a href="games.html"> games </a></li>
+                <li> <a style="font-weight: bolder;" href="games.html"> games </a></li>
                 <li> <a href="projects.html"> projects </a></li>
                 <li> <a href="tools.html"> tools </a></li>
-                <li> <a style="font-weight: bolder;" href="blog.html"> blog </a></li>
+                <li> <a href="blog.html"> blog </a></li>
                 <li> <a href="help.html"> help </a></li>
                 
             </ul>
@@ -37,10 +36,10 @@
         
         <div id="hamburgerbar" class="hamburger">
             <a href="javascript:void(0)" class="close-hamburger" onclick="closeHamburger()">  </a>
-            <a href="games.html">games</a>
+            <a style="font-weight: bolder;" href="games.html">games</a>
             <a href="projects.html">projects</a>
             <a href="tools.html">tools</a>
-            <a style="font-weight: bolder;"href="\blog">blog</a>
+            <a href="blog.html">blog</a>
             <a href="help.html">help</a>
             <a href="#" id="openSettings"> website settings </a>
             
@@ -59,20 +58,5 @@
             </div>
         
         </div>
-
-        <div>
-            <h1 class="adminonly"> welcome cj! </h1>
-            <h1 class="viewer"> welcome to the blog! </h1>
-            <div class="admin" id="cjpanel">
-                <div class="admin-container">
-                    <input class="blog-input" type="text" id="post-title" placeholder="title of post">
-                    <textarea  class="blog-textarea" id="post-content" placeholder="blog something"></textarea>
-                    <button class="btn" onclick="publishPost()"> Post </button>
-                </div> 
-            
-            </div>
-            <div id="blog-feed"></div>
-        </div>
-
 </body>
 </html>
