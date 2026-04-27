@@ -6,6 +6,7 @@
 // > add basic games
 // > experiment with ads
 // > add cool chat bot at bottom right
+// show current duolingo script
 
 // Things to learn
 // > Git version control and commands
