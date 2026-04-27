@@ -15,32 +15,6 @@
 // > learn java script syntax
 // > learn a javascript framework (react.js)
 
-// IMPORTANT ADMIN CHECKER
-
-
-
-/* theme changer */
-
-const themebtn = document.getElementById("theme");
-const skrbl = document.getElementById("skrbl");
-
-if(localStorage.getItem("theme")== "dark"){
-    document.body.classList.add("dark");
-}
-
-function changeTheme() {
-    document.body.classList.toggle("dark");
-    
-    if(document.body.classList.contains("dark")){
-        localStorage.setItem("theme","dark");
-        skrbl.src = "assets/images/skrblai-dark.png"
-    }else{
-        localStorage.setItem("theme","light");
-        skrbl.src = "assets/images/skrblai.png"
-    }
-}
-
-
 
 /* hamburger sidebar */
 
@@ -63,8 +37,34 @@ function closeHamburger(){
     document.getElementById("hamburgerbar").style.width = "0px";
 }
 
+
+//TODO: FIX IMAGE UPDATE AUTOMATICALLY
+function changeTheme() {
+    document.body.classList.toggle("dark");
+    
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("theme","dark");
+        skrbl.src = "../assets/images/skrblai-dark.png"
+    }else{
+        localStorage.setItem("theme","light");
+        skrbl.src = "../assets/images/skrblai.png";
+    }
+}
+
 /* popup window for settings */
 document.addEventListener("DOMContentLoaded", function(){
+
+/* theme changer */
+
+const themebtn = document.getElementById("theme");
+const skrbl = document.getElementById("skrbl");
+
+if(localStorage.getItem("theme")== "dark"){
+    document.body.classList.add("dark");
+}
+
+
+
     var settingsWindow = document.getElementById("settings-modal");
     var openSettings = document.getElementById("openSettings");
     var span = document.getElementById("close");

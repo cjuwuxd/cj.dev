@@ -283,7 +283,7 @@ nav {
 .popupwindow {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
@@ -500,7 +500,7 @@ p {
 }
 
 .child-box.login input {
-    border: 1px solid rgba(14, 13, 12, 0.191);
+    border: 1px solid var(--text-muted);
 }
 
 
