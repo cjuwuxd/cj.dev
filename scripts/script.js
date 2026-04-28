@@ -85,16 +85,7 @@ if(localStorage.getItem("theme")== "dark"){
 });
 
 
-// Blog Logic
 
-
-
-
-
-//login btn
-function goToLogin() {
-    window.location.href = "../login";
-}
 
 async function displayStreak() {
     const username = '1049363268'; 
