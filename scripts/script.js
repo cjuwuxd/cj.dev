@@ -87,42 +87,8 @@ if(localStorage.getItem("theme")== "dark"){
 
 // Blog Logic
 
-function publishPost() {
 
-    console.log('testing')
-    const content = document.getElementById("post-content").value;
-    const title = document.getElementById("post-title").value;
-    
-    if (!title || !content) {
-        alert("need both pls");
-        return;
-    }
 
-    const now = new Date();
-    const dateString = now.toLocaleDateString('en-US',{
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-    });
-
-    const postElement = document.createElement('article');
-    postElement.className = 'post-card';
-    postElement.innerHTML = `
-        <div class="post-header">
-            <span class="post-date">${dateString}</span>
-            <h1 class="post-title">${title}</h1>
-        </div>
-        <p class="post-excerpt">${content}</p>
-        <div class="post-footer">
-            
-        </div>
-    `;
-    console.log("this should work")
-    document.getElementById('blog-feed').prepend(postElement);
-    document.getElementById('post-content').value = '';
-    document.getElementById('post-title').value = '';
-
-}
 
 
 //login btn
@@ -150,7 +116,7 @@ async function displayStreak() {
             
             
             const el = document.getElementById('streak-number');
-            if (el) el.innerText = streak;
+            if (el) el.innerText = streak + "🔥";
         } else {
             console.warn("User not found. Check if the username is correct.");
         }

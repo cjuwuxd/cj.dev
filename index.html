@@ -3,8 +3,8 @@
 <head>
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap">
-<script src="script.js"> </script>
-<script type="module" src="auth.js"> </script>
+<script src="./scripts/script.js"> </script>
+<script type="module" src="scripts/auth.js"> </script>
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 </head>
     
@@ -29,7 +29,7 @@
                 <li> <a href="./projects"> projects </a></li>
                 <li> <a href="./tools"> tools </a></li>
                 <li> <a href="./blog/"> blog </a></li>
-                <li> <a href="./help"> help </a></li>
+                <li> <a href="#help"> help </a></li>
                 
             </ul>
             <ul class="rightnav"> 
@@ -47,7 +47,7 @@
             <a href="./projects">projects</a>
             <a href="./tools">tools</a>
             <a href="./blog">blog</a>
-            <a href="./help">help</a>
+            <a href="#help">help</a>
             <a href="#" id="openSettings"> website settings </a> 
                     
 
@@ -100,7 +100,7 @@
                     <a onclick="changeTheme()" class="settings"> Theme </a>
             </div>
         </div>
-        <div class="container-box"> 
+        <div class="container-box carousel"> 
             <div>
                 <h1> Cool Projects</h1>
                 <h2> in progress...</h2>
@@ -122,7 +122,7 @@
         
         <div class="container-box">
             
-            <div id="content" class="child-box main">
+            <div class="child-box main">
                 
                 <p id="home"style="font-weight: bold;"> <i> #about self </i> <br>
                     class cjbriones(): <br>
@@ -133,15 +133,14 @@
                     &emsp; &emsp; while alive: <br>
                     &emsp; &emsp; &emsp; if dreams == True: <br>
                     &emsp;&emsp;&emsp; &emsp; &emsp; achieveDreams(using=skills) <br>
-
-                    <a class="settings" onclick="displayStreak()">  duolingo streak: </a> <span id="streak-number">  </span>
+                        
+                   
 
                     
                 
                 </p>
             </div>
-
-            <div id="sidebar" class="child-box sidebar">
+            <div class="child-box sidebar">
                     
                     <h3> Things I know:</h3>
                     > Python <br>
@@ -150,13 +149,33 @@
                     > Javascript <br>
                     > C, C#, C++ <br>
                     > Java <br>
-                    > Git
+                    > Git <br>
                     
-                
+                    
             </div>
+
         </div>     
+        <div class="admin-content">
+            <div class="child-box main"> 
+                (movie, music, and games i like)
+                Place Holder Loren   Yes What is Lorem Ipsum?
+             typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+            </div>
+
+            <div class="child-box sidebar">
+                <h1 style="font-size: medium;">show duolingo streak</h1>
+                <button class="btn" onclick="displayStreak()"> duolingo streak:
+                             <span id="streak-number">  </span>
+                    </button>
+            </div>
+        </div>
+        <h1> </h1>
         <div class="container-box">
-            
+            <div id="help" class="child-box main">
+
+            </div>
         </div>
         
     

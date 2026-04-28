@@ -13,7 +13,7 @@
     --card-bg: #FFFFFF;     
     --accent: #007AFF;      
     --text-main: #1A1A1B;   
-    --text-muted: #65676B;
+    --text-muted: #65676b;
     --admin-display: none;
 
     
@@ -57,7 +57,7 @@ body.dark {
     --card-bg: #15191C;   
     --accent: #3A8DFF;   
     --text-main: #F5F5F7; 
-    --text-muted: #A0A0A5;
+    --text-muted: #a0a0a5;
 }
 
 /* buttons */
@@ -442,7 +442,7 @@ p {
 /* containers */
 .container-box {
     display: flex;
-    
+    flex-direction: row;
     justify-self: center;
     
 }
@@ -461,9 +461,11 @@ p {
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 0.25px solid var(--text-muted);
     z-index: 1;
 }
+
+
 
 .child-box:hover {
     transform: translateY(-4px);
@@ -486,6 +488,21 @@ p {
     flex-direction: column;
     width: fit-content;
 }
+
+/* spinning container */
+
+.container-box.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+}
+
+.child-box.slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}   
 
 .login {
     justify-self: right;
@@ -690,9 +707,11 @@ textarea:focus,input:focus {
     }
 
     .child-box.main{
-        padding: 10px;
-        margin-left: 0px;
         width: fit-content;
+        padding: 5px;
+        margin: 5px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .child-box.sidebar{
     
