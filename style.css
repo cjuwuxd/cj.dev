@@ -444,7 +444,8 @@ p {
     display: flex;
     flex-direction: row;
     justify-self: center;
-    
+    margin-right: 20%;
+    margin-left: 20%;
     
 }
 
@@ -469,9 +470,7 @@ p {
     z-index: 1;
 }
 
-.child-box.main {
-    margin-left: 15%;
-}
+
 
 .child-box.main.about {
     margin-left: auto;
@@ -722,7 +721,8 @@ textarea:focus,input:focus {
     
     .container-box {
         flex-direction: column;
-        
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .child-box.main{
@@ -761,14 +761,14 @@ textarea:focus,input:focus {
     }
     
     .child-box.projects{
-    height: auto;
-    width: 85%;
-    justify-self: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    padding: auto;
-    margin: 20px;
+        height: auto;
+        width: 85%;
+        justify-self: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding: auto;
+        margin: 20px;
     }
 
     .child-box.projects img {
@@ -793,3 +793,10 @@ textarea:focus,input:focus {
 }
 
 
+@media (max-width: 320px) {
+
+    .container-box {
+        max-width: 320px;
+    }
+    
+}

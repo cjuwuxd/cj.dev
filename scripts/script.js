@@ -1,4 +1,6 @@
 // Things I Want To Do
+// > Move website settings to right footer
+// > Add Cool Pixel Art Background
 // > finish home page
 // > add sound fx 
 // > start blog page, with functioning uploads, likes, comments, etc.
@@ -6,9 +8,8 @@
 // > add basic games
 // > experiment with ads
 // > add cool chat bot at bottom right
-// show current duolingo script
+// show current duolingo script (done)
 // add game black jack lol
-
 
 // Things to learn
 // > Git version control and commands
