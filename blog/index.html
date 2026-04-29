@@ -33,7 +33,7 @@
                 
             </ul>
             <ul id="loginnav" class="rightnav"> 
-                <a style="text-decoration: none; font-size: small;" href="./login/" class="btn login"> login </a>
+                <a id="loginBTN" style="text-decoration: none; font-size: small;" href="./login/" class="btn login"> login </a>
                 <button class="hamburger-btn" onclick="openHamburger()"> &#9776; </button>
             </ul>
 
@@ -72,7 +72,7 @@
                 <div class="admin" id="cjpanel">
                     <div class="blog-container">
                         <input class="blog-input" type="text" id="post-title" placeholder="title of post">
-                        <textarea  class="blog-textarea" id="post-content" placeholder="blog something"></textarea>
+                        <textarea rows="10" cols="50" class="blog-textarea" id="post-content" placeholder="blog something"></textarea>
                         <button class="btn" id="post-btn" > Post </button>
                     </div> 
                 </div>  
@@ -80,8 +80,8 @@
                 
             </div>  
         </div>
-        <div class="blog-container">
-        <div id="blog-feed"></div>
+        <div class="blog-container feed">
+            <div id="blog-feed"></div>
         </div>
 
 <footer id="footer" class="footer content">

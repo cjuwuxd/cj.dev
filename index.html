@@ -33,7 +33,7 @@
                 
             </ul>
             <ul class="rightnav"> 
-                <a style="text-decoration: none; font-size: small;" href="./login" class="btn login"> login </a>
+                <a id="loginBTN" style="text-decoration: none; font-size: small;" href="./login" class="btn login"> login </a>
                 <button class="hamburger-btn" onclick="openHamburger()"> &#9776; </button>
             </ul>
 
@@ -100,20 +100,22 @@
                     <a onclick="changeTheme()" class="settings"> Theme </a>
             </div>
         </div>
-        <div class="container-box carousel"> 
+        
             <div>
                 <h1> Cool Projects</h1>
                 <h2> in progress...</h2>
-                <div class="child-box sidebar projects">
+            </div>
+            <div class="container-box projects"> 
+                <div class="child-box projects">
                     <a href="https://skrblai.streamlit.app/" target="_blank">
                     <img class="centerimage" id="skrbl" width="387" src="assets/images/skrblai.png" alt="SKRBL.ai">
                     </a>
                 </div>
-                <div class="child-box sidebar projects">
+                <div class="child-box projects">
                     <a href="#">
                     <img class="centerimage" width="300" height="160"src="assets/images/wave.jpg" alt="WAVE">
                     </a>
-                </div>
+                
             </div>
             
         </div>
@@ -122,7 +124,7 @@
         
         <div class="container-box">
             
-            <div class="child-box main">
+            <div class="child-box main about">
                 
                 <p id="home"style="font-weight: bold;"> <i> #about self </i> <br>
                     class cjbriones(): <br>

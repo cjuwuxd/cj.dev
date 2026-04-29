@@ -1,4 +1,3 @@
-
 import { auth } from "./firebase-init.js";
 
 import {onAuthStateChanged,signOut} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -9,7 +8,7 @@ let myLogo = document.getElementById("mainbutton");
 onAuthStateChanged(auth, (user) => {
     if (user) {
         
-        if (window.location.pathname !== "/admin-dashboard.html") { 
+        if (window.location.pathname !== "../login/admin-dashboard.html") { 
             //change button mode
             loginbtn.textContent = "hi cj!";
             loginbtn.addEventListener("mouseenter" ,() =>{
