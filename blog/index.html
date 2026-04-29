@@ -47,24 +47,9 @@
             <a href="./tools">tools</a>
             <a style="font-weight: bolder;" href="./blog">blog</a>
             <a href="./#help">help</a>
-            <a href="#" id="openSettings"> website settings </a>
             
         </div>
         
-
-        <!--website settings modal popup */-->
-
-        <div id="settings-modal" class="popupwindow">
-            <div class="popupcontent"> 
-                <span class="closebtn" id="close"> &times; </span> 
-                    Website Settings <br>
-                    <a class="settings"> Music </a> <br>
-                    <a class="settings"> Sounds </a> <br>
-                    <a onclick="changeTheme()" class="settings"> Theme </a>
-            </div>
-        
-
-        </div>
             <h1 class="viewer"> welcome to the blog! </h1>
         <div class="admin-content">
             <div class="blog-container">
@@ -85,14 +70,40 @@
         </div>
 
 <footer id="footer" class="footer content">
+           
+            <div class="social-footer">
             <ul class="centernav"> 
                 <a class="social first"> > <a>
                 <li> <a class="social" href="https://github.com/cjuwuxd"> github </a></li>
                 <li> <a class="social instagram " href="https://www.instagram.com/cjuwuxd/"> instagram </a></li>
                 <li> <a class="social twitter" href="https://x.com/cjuwuxd"> twitter </a></li>
             </ul>
-            <ul class="rightnav">  </ul>        
-</footer>
+            </div>
+             <button class="btn social" popovertarget="social-menu"> 🫂 </button>
+            
+            <ul class="rightnav">
+                <button style="anchor-name: --settings-btn;"class="btn websettings" popovertarget="settings-menu"> ⚙️ </button>
+            </ul>
+            <!--website settings menu popup */-->
+
+            <div id="settings-menu" popover>
+                    <div class="popupcontent"> 
+                            Website Settings <br>
+                            <a class="settings"> Music </a> <br>
+                            <a class="settings"> Sounds </a> <br>
+                            <a onclick="changeTheme()" class="settings"> Theme </a>
+                    </div>
+            </div>
+
+            <!-- soical menu popup */-->
+             <div id="social-menu" popover>
+                > <br>
+                <a class="social" href="https://github.com/cjuwuxd"> github </a> <br>
+                <a class="social instagram " href="https://www.instagram.com/cjuwuxd/"> instagram </a> <br>
+                <a class="social twitter" href="https://x.com/cjuwuxd"> twitter </a>
+             </div>
+        
+    </footer>
 
 
 </body>

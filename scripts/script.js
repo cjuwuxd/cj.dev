@@ -1,5 +1,5 @@
 // Things I Want To Do
-// > Move website settings to right footer
+// > Move website settings to right footer (done)
 // > Add Cool Pixel Art Background
 // > finish home page
 // > add sound fx 
