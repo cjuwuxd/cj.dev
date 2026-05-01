@@ -47,6 +47,9 @@ html {
    scroll-behavior: smooth;     
 }
 
+body.on {
+    
+}
 
 body.dark {
     --bg: rgb(25, 24, 25);
@@ -344,16 +347,25 @@ p {
 }
 
 .settings {
+    border-radius: 10px;
+    color: var(--text);
+    background-color: var(--bg);
     font-size: large;
     line-height: 40px;
     margin: 10px 5px ;
-    transition: letter-spacing 0.5s;
+    padding: 5px;
+    font-size: larger;
 }
 
 .settings:hover {
-    letter-spacing: 1px;
+    background-color: var(--text);
+    color: var(--bg);
     cursor: pointer;
     font-weight: bold;
+}
+
+.settings:active{
+    background-color: var(--webbg);
 }
 
 /* footer settings */
@@ -434,7 +446,6 @@ p {
     
     
     margin: 0;
-    width: fit-content;
     inset: unset;
 
 
@@ -640,8 +651,9 @@ textarea:focus,input:focus {
 #blog-feed {
     max-width: 100%;
     margin: 10px;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    flex-direction: wrap;
     gap: 20px;
 }
 
@@ -652,6 +664,7 @@ textarea:focus,input:focus {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    
 }
 
 .post-card:hover {
@@ -823,7 +836,7 @@ textarea:focus,input:focus {
     }
 
     #blog-feed {
-    
+    display: flex;
     flex-direction: column;
     
 }

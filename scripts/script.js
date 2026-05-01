@@ -1,46 +1,73 @@
-
-
-
 /* hamburger sidebar */
 
-var hamburgeractive = false
+let hamburgeractive = false;
 
 function openHamburger() {
-
+    
     if (!hamburgeractive) {
         document.getElementById("hamburgerbar").style.width = "250px";
-        hamburgeractive = true
     } else {
         document.getElementById("hamburgerbar").style.width = "0px";
-        hamburgeractive = false
+        hamburgeractive = false;
     }
    
     
 }
-
-function closeHamburger(){
-    document.getElementById("hamburgerbar").style.width = "0px";
-}
-
 
 //TODO: FIX IMAGE UPDATE AUTOMATICALLY
 function changeTheme() {
     document.body.classList.toggle("dark");
     
     if(document.body.classList.contains("dark")){
+        document.getElementById("themebtn").textContent = "🔆"
         localStorage.setItem("theme","dark");
-        skrbl.src = "../assets/images/skrblai-dark.png"
     }else{
+        document.getElementById("themebtn").textContent = "🌙"
         localStorage.setItem("theme","light");
-        skrbl.src = "../assets/images/skrblai.png";
     }
 }
 
-/* popup window for settings */
+function playSound(){
+    const buttons = document.querySelectorAll('a, button');
+    console.log("e")
+    
+    buttons.forEach(element => {
+        element.addEventListener('click', () =>{
+            if (localStorage.getItem("sound") == "on"){
+                const click = clickSound.cloneNode(true);
+                click.playbackRate = 1.5;
+                click.play();
+                
+                click.onended = () => click.remove();
+            }
+        });
+
+        element.addEventListener('mouseenter', () => {
+            if (localStorage.getItem("sound") == "on"){
+                const hover = hoverSound.cloneNode(true);  
+                hover.playbackRate = 1.5;
+                hover.play();
+                
+                hover.onended = () => hover.remove();
+            }
+        });
+        
+    });
+}
+
+
+function toggleSound(){
+    const isOn = document.body.classList.toggle("on");
+    document.getElementById('soundbtn').textContent = isOn ? "🔊" : "🔇";
+    localStorage.setItem("sound", isOn ? "on" : "off");
+}
+
+
+
+
 document.addEventListener("DOMContentLoaded", function(){
 
-/* theme changer */
-
+// theme changer 
 const themebtn = document.getElementById("theme");
 const skrbl = document.getElementById("skrbl");
 
@@ -48,25 +75,34 @@ if(localStorage.getItem("theme")== "dark"){
     document.body.classList.add("dark");
 }
 
+if(document.body.classList.contains("dark")){
+        document.getElementById("themebtn").textContent = "🔆"
+        localStorage.setItem("theme","dark");
+    }else{
+        document.getElementById("themebtn").textContent = "🌙"
+        localStorage.setItem("theme","light");
+}
+
+// Button Sfx
+let hoverSound = document.getElementById('hoverSound');
+let clickSound = document.getElementById('clickSound');
+const soundBtn = document.getElementById('soundbtn');
+
+if (soundBtn) {
+    soundBtn.addEventListener('click' , toggleSound); 
+}
 
 
-    var settingsWindow = document.getElementById("settings-modal");
-    var openSettings = document.getElementById("openSettings");
-    var span = document.getElementById("close");
-
-    openSettings.onclick = function(){
-        settingsWindow.style.display = "block"
+if (localStorage.getItem("sound") === "on") {
+        document.body.classList.add("on");
+        if (soundBtn) soundBtn.textContent = "🔊";
+    } else {
+        document.body.classList.remove("on");
+        if (soundBtn) soundBtn.textContent = "🔇";
     }
 
-    span.onclick = function(){
-        settingsWindow.style.display = "none"
-    }
+playSound();
 
-    window.onclick = function(event){
-        if (event.target==settingsWindow){
-            settingsWindow.style.display = "none";
-        }
-    }
 });
 
 
@@ -100,6 +136,5 @@ async function displayStreak() {
         console.error("Fetch error:", error);
     }
 }
-
 
 

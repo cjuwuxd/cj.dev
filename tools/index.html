@@ -13,10 +13,12 @@
     <title> cj.dev | tools </title>
 
     <body>
+        <audio id="hoverSound" src="../assets/sounds/hover.mp3" preload="auto"></audio>
+        <audio id="clickSound" src="../assets/sounds/pop.mp3" preload="auto"></audio>
         <header class="header"></header>
        
         <nav class="navigation">
-            <img class="admin-content" src="logo.svg" width="25px" height="25px">
+            <img class="admin-content" src="../logo.svg" width="25px" height="25px">
             <ul id="mainbutton" class="leftnav">
                 
                 <a href="../#home" class="hover-input"> cjuwuxdev 
@@ -83,9 +85,8 @@
             <div id="settings-menu" popover>
                     <div class="popupcontent"> 
                             Website Settings <br>
-                            <a class="settings"> Music </a> <br>
-                            <a class="settings"> Sounds </a> <br>
-                            <a onclick="changeTheme()" class="settings"> Theme </a>
+                            <a id="soundbtn" class="settings"> 🔊 </a> <br>
+                            <a id="themebtn" onclick="changeTheme()" class="settings"> 🌙 </a>
                     </div>
             </div>
 
