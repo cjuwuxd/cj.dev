@@ -12,6 +12,8 @@
     <title> cj.dev </title>
 
     <body>
+        <audio id="hoverSound" src="../assets/sounds/hover.mp3" preload="auto"></audio>
+        <audio id="clickSound" src="../assets/sounds/pop.mp3" preload="auto"></audio>
         <header class="header"></header>
        
         <nav class="navigation">
@@ -67,14 +69,36 @@
         
     </body>
     <footer id="footer" class="footer content">
-        
+           
+            <div class="social-footer">
             <ul class="centernav"> 
                 <a class="social first"> > <a>
                 <li> <a class="social" href="https://github.com/cjuwuxd"> github </a></li>
                 <li> <a class="social instagram " href="https://www.instagram.com/cjuwuxd/"> instagram </a></li>
                 <li> <a class="social twitter" href="https://x.com/cjuwuxd"> twitter </a></li>
             </ul>
-            <ul class="rightnav">  </ul>
+            </div>
+             <button class="btn social" popovertarget="social-menu"> 🫂 </button>
+            
+            <ul class="rightnav">
+                <button style="anchor-name: --settings-btn;"class="btn websettings" popovertarget="settings-menu"> ⚙️ </button>
+            </ul>
+            <!--website settings menu popup */-->
+
+            <div id="settings-menu" popover>
+                    <div class="popupcontent"> 
+                            Website Settings <br>
+                            <a id="soundbtn" class="settings"> 🔊 </a> <br>
+                            <a id="themebtn" onclick="changeTheme()" class="settings"> 🌙 </a>
+                    </div>
+            </div>
+            <!-- soical menu popup */-->
+             <div id="social-menu" popover>
+                > <br>
+                <a class="social" href="https://github.com/cjuwuxd"> github </a> <br>
+                <a class="social instagram " href="https://www.instagram.com/cjuwuxd/"> instagram </a> <br>
+                <a class="social twitter" href="https://x.com/cjuwuxd"> twitter </a>
+             </div>
         
     </footer>
    
