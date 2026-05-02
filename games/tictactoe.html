@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap">
+<script src="../scripts/script.js"></script> 
+<script type="module" src="../scripts/auth.js"> </script>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+</head>
+    
+   
+    <link rel="icon" type="image/x-icon" href="../logo.svg">
+    <title> cj.dev | games </title>
+
+    <body>
+        <audio id="hoverSound" src="../assets/sounds/hover.mp3" preload="auto"></audio>
+        <audio id="clickSound" src="../assets/sounds/pop.mp3" preload="auto"></audio>
+        <audio id ="win" src="../assets/sounds/win.mp3" preload="auto"></audio>
+        <audio id="draw" src="../assets/sounds/sad.mp3" preload="auto"></audio>
+        <header class="header"></header>
+       
+        <nav class="navigation">
+            <img class="admin-content" src="../logo.svg" width="25px" height="25px">
+            <ul id="mainbutton" class="leftnav">
+                
+                <a href="../#home" class="hover-input"> cjuwuxdev 
+                    <span style="font-size: small;" class="hover-output"> vibe coding since 2023</span>
+                </a>
+            </ul>
+            <ul id="navbar" class="centernav">
+                
+                <li> <a style="font-weight: bolder;" href="../games"> games </a></li>
+                <li> <a href="../projects"> projects </a></li>
+                <li> <a href="../tools"> tools </a></li>
+                <li> <a href="../blog/"> blog </a></li>
+                <li> <a href="../#help"> help </a></li>
+                
+            </ul>
+            <ul class="rightnav"> 
+                <a id="loginBTN" style="text-decoration: none; font-size: small;" href="../login" class="btn login"> login </a>
+                <button class="hamburger-btn" onclick="openHamburger()"> &#9776; </button>
+            </ul>
+
+        </nav>
+
+        
+        <div id="hamburgerbar" class="hamburger">
+            
+            <a href="javascript:void(0)" class="close-hamburger" onclick="closeHamburger()">  </a>
+            <a style="font-weight: bolder;" href="../games">games</a>
+            <a href="../projects">projects</a>
+            <a style="font-weight: bolder;" href="../tools">tools</a>
+            <a href="../blog">blog</a>
+            <a href="../#help">help</a>
+            
+        </div>
+        <h1>  tic tac toe </h1>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+            .board {
+                justify-content: center;
+                display: grid;
+                grid-template-columns: repeat(3,100px);
+                grid-template-rows: repeat(3,100px);
+                gap: 5px;
+                margin-top: 20px;
+            }
+            
+            .cell {
+                width: 100px; height: 100px;
+                display: flex; align-items: center; justify-content: center;
+                border: 1px solid;
+                border-radius: 10px;
+                background: var(--bg);
+                padding: 24px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s ease;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            .cell:hover {
+                transform: translateY(-4px);
+                cursor: pointer;
+                background-color: #3A8DFF;
+            }
+        </style>
+        <div> <h1 id="status"> Player X Turn </div>
+        <div class="board">
+            <div class="cell" data-index="0"> </div>
+            <div class="cell" data-index="1"> </div>
+            <div class="cell" data-index="2"> </div>
+            <div class="cell" data-index="3"> </div>
+            <div class="cell" data-index="4"> </div>
+            <div class="cell" data-index="5"> </div>
+            <div class="cell" data-index="6"> </div>
+            <div class="cell" data-index="7"> </div>
+            <div class="cell" data-index="8"> </div>
+        </div>
+        
+
+        <script>
+            let gameState  = ["", "", "", "", "", "", "", "", ""];
+            let currentPlayer = "X";
+            let gameOver = false;
+            const statusDisplay = document.getElementById('status');
+            const cells = document.querySelectorAll('.cell');   
+
+
+            const winConditions = [
+                [0,1,2], [3,4,5], [6,7,8], //win rows
+                [0,3,6], [1,4,7], [2,5,8], //win collums
+                [0,4,8], [2,4,6] //win diagonals
+            ]
+            
+            function clickCells(e) {
+                if (localStorage.getItem("sound") == "on"){
+                const click = clickSound.cloneNode(true);
+                click.playbackRate = 1.5;
+                click.play();
+                
+                click.onended = () => click.remove();
+            }
+                const clickedCell = e.target;
+                const index = clickedCell.getAttribute('data-index');
+
+                if (gameState[index] !== "" || !statusDisplay.innerText.includes("Turn")) return;
+
+                gameState[index] = currentPlayer;
+                clickedCell.innerText = currentPlayer;
+                checkResult();
+            }
+
+            function checkResult(){
+                let roundWin = false;
+                for (let condition of winConditions) {
+                    let [a,b,c] = condition;
+                    if (gameState[a] && gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
+                        roundWin = true;
+                        break;
+                }
+            }
+
+                if (roundWin) {
+                    statusDisplay.innerText = `Player ${currentPlayer} Win`;
+                    if (localStorage.getItem("sound") == "on") {
+                        document.getElementById('win').play();
+                    }
+                    return;
+                }
+
+                if (!gameState.includes("")) {
+                    statusDisplay.innerText = "Draw!";
+                    if (localStorage.getItem("sound") == "on") {
+                        document.getElementById('draw').play();
+                    }
+                    return;
+                }
+
+                currentPlayer = currentPlayer === "X" ? "O" : "X";
+                statusDisplay.innerText = `Player ${currentPlayer} Turn`;
+
+            }
+
+            function resetGame() {
+                currentPlayer = "X"
+                gameState  = ["", "", "", "", "", "", "", "", ""];
+                statusDisplay.innerText = "Player X Turn"
+                cells.forEach(cell => cell.innerText = "");
+            }
+            
+            function hoversound(){
+                if (localStorage.getItem("sound") == "on"){
+                const hover = hoverSound.cloneNode(true);  
+                hover.playbackRate = 1.5;
+                hover.play();
+                
+                hover.onended = () => hover.remove();
+            }
+            }
+
+            cells.forEach(cell => cell.addEventListener("click", clickCells))
+            cells.forEach(cell => cell.addEventListener("mouseenter", hoversound))
+        </script>
+        <div style="justify-content: center;"class="container-box">
+            <button class="btn" onclick="resetGame()"> Reset Game </button>
+        </div>
+    </body>
+    <footer id="footer" class="footer content">
+           
+            <div class="social-footer">
+            <ul class="centernav"> 
+                <a class="social first"> > <a>
+                <li> <a class="social" href="https://github.com/cjuwuxd"> github </a></li>
+                <li> <a class="social instagram " href="https://www.instagram.com/cjuwuxd/"> instagram </a></li>
+                <li> <a class="social twitter" href="https://x.com/cjuwuxd"> twitter </a></li>
+            </ul>
+            </div>
+             <button class="btn social" popovertarget="social-menu"> 🫂 </button>
+            
+            <ul class="rightnav">
+                <button style="anchor-name: --settings-btn;"class="btn websettings" popovertarget="settings-menu"> ⚙️ </button>
+            </ul>
+            <!--website settings menu popup */-->
+
+            <div id="settings-menu" popover>
+                    <div class="popupcontent"> 
+                            Website Settings <br>
+                            <a id="soundbtn" class="settings"> 🔊 </a> <br>
+                            <a id="themebtn" onclick="changeTheme()" class="settings"> 🌙 </a>
+                    </div>
+            </div>
+
+            <!-- soical menu popup */-->
+             <div id="social-menu" popover>
+                > <br>
+                <a class="social" href="https://github.com/cjuwuxd"> github </a> <br>
+                <a class="social instagram " href="https://www.instagram.com/cjuwuxd/"> instagram </a> <br>
+                <a class="social twitter" href="https://x.com/cjuwuxd"> twitter </a>
+             </div>
+        
+    </footer>
+
+</html>

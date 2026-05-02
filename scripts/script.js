@@ -6,6 +6,7 @@ function openHamburger() {
     
     if (!hamburgeractive) {
         document.getElementById("hamburgerbar").style.width = "250px";
+        hamburgeractive = true;
     } else {
         document.getElementById("hamburgerbar").style.width = "0px";
         hamburgeractive = false;
