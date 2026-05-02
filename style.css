@@ -47,9 +47,6 @@ html {
    scroll-behavior: smooth;     
 }
 
-body.on {
-    
-}
 
 body.dark {
     --bg: rgb(25, 24, 25);
