@@ -6,7 +6,7 @@
 }
 
 :root {
-    --bg: white;
+    --bg: rgba(255, 255, 255, 0.652);
     --text: black;
     --sidebarcolor: rgba(255, 200, 209, 0.9);
     --webbg: rgb(234, 238, 255);
@@ -15,6 +15,7 @@
     --text-main: #1A1A1B;   
     --text-muted: #65676b;
     --admin-display: none;
+    --navbg: rgba(255, 255, 255, 0.744);
 
     
 }
@@ -39,6 +40,10 @@ body{
     padding-bottom: 50px;
     background-color: var(--webbg);    
     overflow-x: hidden;
+    background: url(./assets/images/light_bg.jpg) repeat-x;
+    background-size: cover;
+    image-rendering:pixelated;
+    animation: slide 60s linear infinite;
 }
 
 /* this fixed bottom color bug */
@@ -49,15 +54,19 @@ html {
 
 
 body.dark {
-    --bg: rgb(25, 24, 25);
+    --bg: rgba(0, 0, 0, 0.596);
     --webbg: rgb(24, 27, 38);
-    --text: white;
+    --text: rgb(239, 238, 238);
     --sidebarcolor: hsla(350, 78%, 60%, 0.95);
-    --bg: #0B0E11;       
     --card-bg: #15191C;   
     --accent: #3A8DFF;   
     --text-main: #F5F5F7; 
     --text-muted: #a0a0a5;
+    --navbg: rgba(0, 0, 0, 0.5);
+    background: url(./assets/images/dark_bg.jpg) repeat-x;
+    background-size: cover;
+    image-rendering:pixelated;
+    animation: slide 100s linear infinite;
 }
 
 /* buttons */
@@ -155,7 +164,7 @@ nav {
 .navigation {
     display: flex;
     align-items: center;
-    background-color: var(--bg);
+    background-color: var(--navbg);
     padding: 10px;
     margin: 0;
     justify-content: space-between;
@@ -373,7 +382,7 @@ p {
     display: flex;
     position: fixed;
     width: 100%;
-    background-color: var(--bg);
+    background-color: var(--navbg);
     padding: 0;
     margin: 1;
     justify-content: space-between;
@@ -385,7 +394,7 @@ p {
 }
 
 .footer.content {
-    background-color: var(--bg);
+    background-color: var(-navbg);
     border-top: 3px solid;
     
     
@@ -760,6 +769,10 @@ textarea:focus,input:focus {
   to { transform: translateY(0); opacity: 1; }
 }
 
+@keyframes slide {
+  from { background-position: 0 0; }
+  to { background-position: 2000px 0; }
+}
 
 
 
