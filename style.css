@@ -10,13 +10,13 @@
     --text: black;
     --sidebarcolor: rgba(255, 200, 209, 0.9);
     --webbg: rgb(234, 238, 255);
-    --card-bg: #FFFFFF;     
+    --card-bg: #ffffff77;     
     --accent: #007AFF;      
     --text-main: #1A1A1B;   
     --text-muted: #65676b;
     --admin-display: none;
     --navbg: rgba(255, 255, 255, 0.744);
-
+    --skrbl: "./assets/images/skrblai.png";
     
 }
 
@@ -34,16 +34,13 @@ body{
     font-family: "Comic Sans MS" ,"Comic Neue", cursive;
     font-size: larger;
     color: var(--text);
-    transition: 0.67s ;
+    transition: 2ms ;
     min-height: 100vh;
     flex: 1;
     padding-bottom: 50px;
     background-color: var(--webbg);    
     overflow-x: hidden;
-    background: url(./assets/images/light_bg.jpg) repeat-x;
-    background-size: cover;
-    image-rendering:pixelated;
-    animation: slide 60s linear infinite;
+    
 }
 
 /* this fixed bottom color bug */
@@ -52,13 +49,19 @@ html {
    scroll-behavior: smooth;     
 }
 
+body.light {
+    background: url(./assets/images/light_bg.jpg) repeat-x;
+    background-size: cover;
+    image-rendering: pixelated;
+    animation: slide 60s linear infinite;
+}
 
 body.dark {
     --bg: rgba(0, 0, 0, 0.596);
     --webbg: rgb(24, 27, 38);
     --text: rgb(239, 238, 238);
     --sidebarcolor: hsla(350, 78%, 60%, 0.95);
-    --card-bg: #15191C;   
+    --card-bg: rgba(0, 0, 0, 0.596);
     --accent: #3A8DFF;   
     --text-main: #F5F5F7; 
     --text-muted: #a0a0a5;
@@ -249,7 +252,7 @@ nav {
 
 .leftnav a:hover{
     letter-spacing: 0.1em;
-    color: aquamarine;
+    color: rgb(12, 250, 171);
     cursor: help;
 }
 
@@ -778,6 +781,8 @@ textarea:focus,input:focus {
 
 
 @media (max-width: 768px) {
+    
+
     #navbar{
         display: none;
     }
@@ -786,11 +791,12 @@ textarea:focus,input:focus {
         flex-direction: column;
         margin-right: auto;
         margin-left: auto;
+        transform: scale(0.87);
     }
 
     .child-box.main{
         width: fit-content;
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .child-box.child-box.sidebar {

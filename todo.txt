@@ -10,7 +10,9 @@
 // > add cool chat bot at bottom right
 // show current duolingo script (done)
 // add game black jack lol
+// add type test game
 // image upscaller
+// multiplayer game maybe
 
 
 // Things to learn

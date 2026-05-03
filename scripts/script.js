@@ -22,10 +22,24 @@ function changeTheme() {
     if(document.body.classList.contains("dark")){
         document.getElementById("themebtn").textContent = "🔆"
         localStorage.setItem("theme","dark");
+        if (skrbl !== null) {
+            skrbl.src = "../assets/images/skrblai-dark.png";
+        }
+        
+        
+            
+    
     }else{
         document.getElementById("themebtn").textContent = "🌙"
         localStorage.setItem("theme","light");
+        document.body.classList.add("light");
+        if (skrbl !== null) {
+            skrbl.src = "../assets/images/skrblai.png";
+        }
+        
     }
+    
+
 }
 
 function playSound(){
@@ -79,10 +93,19 @@ if(localStorage.getItem("theme")== "dark"){
 if(document.body.classList.contains("dark")){
         document.getElementById("themebtn").textContent = "🔆"
         localStorage.setItem("theme","dark");
+        if (skrbl !== null) {
+            skrbl.src = "../assets/images/skrblai-dark.png";
+        }
+        
     }else{
         document.getElementById("themebtn").textContent = "🌙"
         localStorage.setItem("theme","light");
+        document.body.classList.add("light");
+        if (skrbl !== null) {
+            skrbl.src = "../assets/images/skrblai.png";
+        }
 }
+
 
 // Button Sfx
 let hoverSound = document.getElementById('hoverSound');
