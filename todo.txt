@@ -1,18 +1,18 @@
 // Things I Want To Do
 // > Move website settings to right footer (done)
-// > Add Cool Pixel Art Background
+// > Add Cool Pixel Art Background (done)
 // > finish home page
-// > add sound fx 
+// > add sound fx  (done)
 // > start blog page, with functioning uploads, likes, comments, etc.
 // > add cool stuff to tools, (qrcode generator, sorting algorithms, mp3 converter)
 // > add basic games
 // > experiment with ads
 // > add cool chat bot at bottom right
-// show current duolingo script (done)
-// add game black jack lol
-// add type test game
-// image upscaller
-// multiplayer game maybe
+// > show current duolingo script (done)
+// > add game black jack lol
+// > add type test game
+// > image upscaller
+// > multiplayer game maybe
 
 
 // Things to learn

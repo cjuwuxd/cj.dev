@@ -559,18 +559,23 @@ p {
 
 /* spinning container */
 
-.container-box.carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-
+.carousel-container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden; 
+  border: 2px solid #333;
 }
 
-.child-box.slide {
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-}   
+.carousel-slide {
+  display: flex; 
+  width: 100%;
+  animation: slideAnimation 10s infinite; 
+}
+
+.carousel-slide img {
+  width: 100%;
+  flex-shrink: 0;
+}
 
 .login {
     justify-self: right;
@@ -777,6 +782,13 @@ textarea:focus,input:focus {
   to { background-position: 2000px 0; }
 }
 
+@keyframes slideAnimation {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
+}
 
 
 
@@ -801,11 +813,17 @@ textarea:focus,input:focus {
 
     .child-box.child-box.sidebar {
         display: flex;
+        height: auto;
+        width: 100%;
+        justify-self: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding: auto;
+        
     }
    
-    .child-box.child-box.sidebar.websettings {
-        display: none;
-    }
+
 
     #content {
         padding: 5px;
