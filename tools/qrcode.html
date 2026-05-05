@@ -5,12 +5,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap">
 <script src="../scripts/script.js"></script> 
 <script type="module" src="../scripts/auth.js"> </script>
+
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 </head>
     
    
     <link rel="icon" type="image/x-icon" href="../logo.svg">
-    <title> cj.dev | projects </title>
+    <title> cj.dev | tools </title>
 
     <body>
         <audio id="hoverSound" src="../assets/sounds/hover.mp3" preload="auto"></audio>
@@ -28,8 +29,8 @@
             <ul id="navbar" class="centernav">
                 
                 <li> <a href="../games"> games </a></li>
-                <li> <a style="font-weight: bolder;" href="../projects"> projects </a></li>
-                <li> <a href="../tools"> tools </a></li>
+                <li> <a href="../projects"> projects </a></li>
+                <li> <a style="font-weight: bolder;" href="../tools"> tools </a></li>
                 <li> <a href="../blog/"> blog </a></li>
                 <li> <a href="../#help"> help </a></li>
                 
@@ -46,33 +47,86 @@
             
             <a href="javascript:void(0)" class="close-hamburger" onclick="closeHamburger()">  </a>
             <a href="../games">games</a>
-            <a style="font-weight: bolder;" href="../projects">projects</a>
-            <a href="../tools">tools</a>
+            <a href="../projects">projects</a>
+            <a style="font-weight: bolder;" href="../tools">tools</a>
             <a href="../blog">blog</a>
             <a href="../#help">help</a>
             
         </div>
-        <h1> Projects </h1>
+        <h1> QR Code Generator </h1>
         <div class="container-box">
-            
             <div class="child-box">
-                More Stuff Coming Soon
+                
+                <input type="text" id="qr-input" placeholder="Enter link or text">
+                <button onclick="generateQR()" class="btn"> Generate </button>
+            </div>
+        </div>
+        <div class="container-box">
+            <div id="qrResult"class="child-box qr" style="display: none;">
+                <div id="qr-display" style="margin: top 20px;"></div>
+                <button id="dbtn" class="btn" onclick="downloadQR()"> Download </button>
+            </div>
+        </div>
+        <div class="container-box">
+            <div class="child-box">
+                <label> Dark Color: <input type="color" id="dark" value="#000000"></label>
+                <label> Light Color: <input type="color" id="light" value="#FFFFFF"></label>
+            </div>
+        </div>
+            
+                
+    
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+                <script>
+                    
+                    
+
+                    function generateQR(){
+                        const qrdiv = document.getElementById('qrResult');
+                        const data = document.getElementById("qr-input").value;
+                        const dark = document.getElementById("dark").value;
+                        const light = document.getElementById("light").value;
+                        const display = document.getElementById("qr-display");
+                        
+                    
+                        if (data) {
+                            display.innerHTML = "";
+
+                            new QRCode(display, {
+                                text: data,
+                                width: 160,
+                                height: 160,
+                                colorDark: dark,
+                                colorLight: light,
+                                correctLevel: QRCode.CorrectLevel.H
+                            });
+
+                            qrdiv.style.display = "inline-block";
+                        } else {
+                            qrdiv.style.display = "none";
+                        }
+                    }
+
+                    function downloadQR() {
+                        const qrImage = document.querySelector("#qr-display img");
+                        
+                        if (qrImage) {
+                            const link = document.createElement("a");
+                            link.href = qrImage.src;
+                            link.download = "qrcode-cj-dev.png";
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                        } else {
+                            alert("Please generate a QR code first!");
+                        }
+                    }
+                </script>
             </div>
         </div>
 
-        <div class="container-box projects"> 
-                <div class="child-box projects">
-                    <a href="https://skrblai.streamlit.app/" target="_blank">
-                    <img class="centerimage" id="skrbl" width="387" src="../assets/images/skrblai.png" alt="SKRBL.ai">
-                    </a>
-                </div>
-                <div class="child-box projects">
-                    <a href="#">
-                    <img class="centerimage" width="300" height="160"src="../assets/images/wave.jpg" alt="WAVE">
-                    </a>
-                
-                </div>
-        </div>
+        
+
     </body>
     <footer id="footer" class="footer content">
            

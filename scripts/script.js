@@ -44,7 +44,6 @@ function changeTheme() {
 
 function playSound(){
     const buttons = document.querySelectorAll('a, button');
-    console.log("e")
     
     buttons.forEach(element => {
         element.addEventListener('click', () =>{

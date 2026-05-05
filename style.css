@@ -563,7 +563,6 @@ p {
   width: 80%;
   margin: auto;
   overflow: hidden; 
-  border: 2px solid #333;
 }
 
 .carousel-slide {
@@ -576,6 +575,19 @@ p {
   width: 100%;
   flex-shrink: 0;
 }
+
+.games-container {
+  width: 100%;
+  margin: auto;
+  overflow: hidden; 
+  border: 2px;
+  
+}
+
+
+
+
+
 
 .login {
     justify-self: right;
@@ -720,6 +732,8 @@ textarea:focus,input:focus {
   transition: color 0.2s;
 }
 
+
+
 .like-btn:hover { color: #e0245e; }
 .comment-btn:hover { color: var(--accent); }
 
@@ -768,8 +782,8 @@ textarea:focus,input:focus {
 }
 
 @keyframes moveRight {
-    0% { transform: translateX(-100%); }
-  100% { transform: translateX(10000px); }
+    0% { transform: translateX(0); }
+  100% { transform: translateX(1000%); }
 }
 
 @keyframes slideIn {
@@ -790,7 +804,19 @@ textarea:focus,input:focus {
   100% { transform: translateX(0); }
 }
 
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-200px * 3)); } /* Translate by the width of one group */
+}
 
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-50px);
+  }
+}
 
 @media (max-width: 768px) {
     
