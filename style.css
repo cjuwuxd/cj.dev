@@ -560,9 +560,16 @@ p {
 /* spinning container */
 
 .carousel-container {
-  width: 80%;
-  margin: auto;
-  overflow: hidden; 
+    width: 70%;
+    margin: auto;
+    overflow: hidden; 
+    background-color: var(--bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    border: 0.25px solid var(--text-muted);
+    z-index: 1;
+
 }
 
 .carousel-slide {
