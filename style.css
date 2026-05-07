@@ -666,13 +666,16 @@ textarea:focus,input:focus {
 }
 
 .blog-container {
-
     display: flex;
     flex-direction: column;
     align-items: center;    
     gap: 15px;            
     max-width: 500px;
     margin: 0 auto;    
+}
+
+.blog-input {
+    max-width: 500px;
 }
 
 .blog-container.feed {
@@ -916,6 +919,14 @@ textarea:focus,input:focus {
         display: block;
     }
 
+    
+    .blog-container {
+        max-width: 300px;
+    }
+
+    .blog-input {
+        max-width: 300px;
+    }
 
 
 }
@@ -925,6 +936,14 @@ textarea:focus,input:focus {
 
     .container-box {
         max-width: 320px;
+    }
+
+    .blog-container {
+        max-width: 200px;
+    }
+
+    .blog-input {
+        max-width: 200px;
     }
     
 }
