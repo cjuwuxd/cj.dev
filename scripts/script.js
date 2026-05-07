@@ -24,7 +24,7 @@ function changeTheme() {
         localStorage.setItem("theme","dark");
         if (skrbl !== null && document.getElementById("help")) {
             skrbl.src = "./assets/images/skrblai-dark.png"
-        } else {
+        } else if (document.getElementById("help")){
             skrbl.src = "../assets/images/skrblai-dark.png"
         }
         
@@ -37,7 +37,7 @@ function changeTheme() {
         document.body.classList.add("light");
         if (skrbl !== null && document.getElementById("help")) {
             skrbl.src = "./assets/images/skrblai.png"
-        } else {
+        } else if (document.getElementById("help")){
             skrbl.src = "../assets/images/skrblai.png"
         }
         
@@ -98,7 +98,7 @@ if(document.body.classList.contains("dark")){
         localStorage.setItem("theme","dark");
         if (skrbl !== null && document.getElementById("help")) {
             skrbl.src = "./assets/images/skrblai-dark.png"
-        } else {
+        } else if (document.getElementById("help")) {
             skrbl.src = "../assets/images/skrblai-dark.png"
         }
         
@@ -108,7 +108,7 @@ if(document.body.classList.contains("dark")){
         document.body.classList.add("light");
         if (skrbl !== null && document.getElementById("help")) {
             skrbl.src = "./assets/images/skrblai.png"
-        } else {
+        } else if (document.getElementById("help")) {
             skrbl.src = "../assets/images/skrblai.png"
         }
 }
@@ -169,3 +169,58 @@ async function displayStreak() {
 }
 
 
+// show local time
+function updateTime() {
+    if (document.getElementById("help")) {
+        const now = new Date();
+    document.getElementById('localTime').innerText = now.toLocaleTimeString();
+    }
+    
+}
+
+setInterval(updateTime, 1000);
+updateTime();
+
+//rain effects
+const canvas = document.getElementById('rainCanvas');
+const ctx = canvas.getContext('2d');
+let raining = false;
+let drops = [];
+
+function createDrops() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  drops = Array.from({ length: 100 }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    speed: 5 + Math.random() * 5
+  }));
+}
+
+function draw() {
+  if (!raining) return;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.strokeStyle = 'rgba(0, 95, 237, 0.5)';
+  ctx.lineWidth = 1;
+  drops.forEach(d => {
+    ctx.beginPath();
+    ctx.moveTo(d.x, d.y);
+    ctx.lineTo(d.x, d.y + 10);
+    ctx.stroke();
+    d.y += d.speed;
+    if (d.y > canvas.height) d.y = -10;
+  });
+  requestAnimationFrame(draw);
+}
+
+document.getElementById('rainToggle').onclick = () => {
+    
+  raining = !raining;
+  if (raining) {
+    console.log("hi")
+    createDrops();
+    draw();
+  } else {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+};

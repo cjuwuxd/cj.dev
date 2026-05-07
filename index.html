@@ -3,7 +3,7 @@
 <head>
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap">
-<script src="./scripts/script.js"> </script>
+
 <script type="module" src="scripts/auth.js"> </script>
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -151,15 +151,23 @@
             
             
         </div>
-        <h1> help </h1>
+        
         <div class="container-box">
             
-            <div id="help" class="child-box main">
-
+            <div class="child-box" style="font-size: small; color: var(--text);">
+           Website Last updated: 05/07/26 <br> <p> Local Time: <span id="localTime">  </span> </p>
             </div>
         </div>
-        
-    
+        <div class="container-box">
+            
+        </div>
+        <div class="container-box">
+            <div id="help" class="child-box main">
+                <p onclick="changeTheme()" class="social">© 2026 cjuwuxdev</p>
+            </div>
+        </div>
+        <canvas id="rainCanvas"></canvas>
+        <button id="rainToggle" class="btn" style="position: fixed; bottom: 60px; left: 20px;"> 🌧️ </button>
     
 
     </body>
@@ -197,5 +205,5 @@
              </div>
         
     </footer>
-    
+    <script src="./scripts/script.js"> </script>
 </html>
