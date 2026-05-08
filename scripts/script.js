@@ -1,3 +1,5 @@
+
+
 /* hamburger sidebar */
 
 let hamburgeractive = false;
@@ -22,7 +24,7 @@ function changeTheme() {
     if(document.body.classList.contains("dark")){
         document.getElementById("themebtn").textContent = "🔆"
         localStorage.setItem("theme","dark");
-        if (skrbl !== null) {
+        if (skrbl) {
             skrbl.src = "../assets/images/skrblai-dark.png"
         }
         
@@ -33,7 +35,7 @@ function changeTheme() {
         document.getElementById("themebtn").textContent = "🌙"
         localStorage.setItem("theme","light");
         document.body.classList.add("light");
-        if (skrbl !== null) {
+        if (skrbl) {
             skrbl.src = "../assets/images/skrblai.png"
         } 
         
@@ -92,7 +94,7 @@ if(localStorage.getItem("theme")== "dark"){
 if(document.body.classList.contains("dark")){
         document.getElementById("themebtn").textContent = "🔆"
         localStorage.setItem("theme","dark");
-        if (skrbl !== null) {
+        if (skrbl) {
             skrbl.src = "../assets/images/skrblai-dark.png"
         }
         
@@ -100,7 +102,7 @@ if(document.body.classList.contains("dark")){
         document.getElementById("themebtn").textContent = "🌙"
         localStorage.setItem("theme","light");
         document.body.classList.add("light");
-        if (skrbl !== null) {
+        if (skrbl) {
             skrbl.src = "../assets/images/skrblai.png"
         } 
 }

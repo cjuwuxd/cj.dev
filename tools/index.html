@@ -13,6 +13,43 @@
     <title> cj.dev | tools </title>
 
     <body>
+        <div id="loading-screen">
+            <div style="display: flex; flex-direction: column;">
+                <h1 id="loading-text" style="color: aliceblue; margin-bottom: 20px;"> uhh </h1>
+                <div style="align-self: center;" class="spinner"></div>
+            </div>
+        </div>
+        <script>
+            /* loading animation */
+            const phrases = [
+                "stuff is happening",
+                "have you tried SKRBL.ai?",
+                "hol up lemme cook",
+                "welcome to my website!",
+                "hi ;)",
+                "optimizing your experience"
+            ]
+
+            const loadingTexts = document.getElementById("loading-text");
+
+            if (loadingTexts) {
+                const random = Math.floor(Math.random() * phrases.length);
+                loadingTexts.textContent = phrases[random];
+            }
+
+
+            window.addEventListener('load', () => {
+                const loader = document.getElementById('loading-screen');
+                if (loader) {
+                    loader.classList.add('fade-out');
+                }
+                
+            
+                setTimeout(() => {
+                    loader.style.display = 'none';
+            }, 500);
+            });
+        </script>
         <audio id="hoverSound" src="../assets/sounds/hover.mp3" preload="auto"></audio>
         <audio id="clickSound" src="../assets/sounds/pop.mp3" preload="auto"></audio>
         <header class="header"></header>
