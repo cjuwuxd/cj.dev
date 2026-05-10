@@ -90,8 +90,39 @@
             <a href="../#help">help</a>
             
         </div>
+        <style>
+            .container-box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .child-box {
+                display: flex;
+                flex-direction: column;
+                gap: 15px; /* Adds consistent spacing between elements */
+                width: 90%;
+                max-width: 400px;
+            }
+
+            input[type="text"], 
+            input[type="color"] {
+                width: 100%;
+                box-sizing: border-box; /* Prevents padding from increasing element size */
+                padding: 10px;
+            }
+
+            label {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                gap: 5px;
+            }
+        </style>
         <h1> QR Code Generator </h1>
-        <div class="container-box">
+        <div  class="container-box">
             <div class="child-box">
                 
                 <input type="text" id="qr-input" placeholder="Enter link or text">
@@ -99,7 +130,7 @@
             </div>
         </div>
         <div class="container-box">
-            <div id="qrResult"class="child-box qr" style="display: none;">
+            <div id="qrResult" class="child-box qr" style="display: none;">
                 <div id="qr-display" style="margin: top 20px;"></div>
                 <button id="dbtn" class="btn" onclick="downloadQR()"> Download </button>
             </div>
