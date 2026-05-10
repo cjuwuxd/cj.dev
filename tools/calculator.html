@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap">
+<script src="../scripts/script.js"></script> 
+<script type="module" src="../scripts/auth.js"> </script>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+</head>
+    
+   
+    <link rel="icon" type="image/x-icon" href="../logo.svg">
+    <title> cj.dev | tools </title>
+
+    <body>
+        <div id="loading-screen">
+            <div style="display: flex; flex-direction: column;">
+                <h1 id="loading-text" style="color: aliceblue; margin-bottom: 20px;"> uhh </h1>
+                <div style="align-self: center;" class="spinner"></div>
+            </div>
+        </div>
+        <script>
+            /* loading animation */
+            const phrases = [
+                "stuff is happening",
+                "have you tried SKRBL.ai?",
+                "hol up lemme cook",
+                "welcome to my website!",
+                "hi ;)",
+                "optimizing your experience"
+            ]
+
+            const loadingTexts = document.getElementById("loading-text");
+
+            if (loadingTexts) {
+                const random = Math.floor(Math.random() * phrases.length);
+                loadingTexts.textContent = phrases[random];
+            }
+
+
+            window.addEventListener('load', () => {
+                const loader = document.getElementById('loading-screen');
+                if (loader) {
+                    loader.classList.add('fade-out');
+                }
+                
+            
+                setTimeout(() => {
+                    loader.style.display = 'none';
+            }, 500);
+            });
+        </script>
+        <audio id="hoverSound" src="../assets/sounds/hover.mp3" preload="auto"></audio>
+        <audio id="clickSound" src="../assets/sounds/pop.mp3" preload="auto"></audio>
+        <header class="header"></header>
+       
+        <nav class="navigation">
+            <img class="admin-content" src="../logo.svg" width="25px" height="25px">
+            <ul id="mainbutton" class="leftnav">
+                
+                <a href="../#home" class="hover-input"> cjuwuxdev 
+                    <span style="font-size: small;" class="hover-output"> vibe coding since 2023</span>
+                </a>
+            </ul>
+            <ul id="navbar" class="centernav">
+                
+                <li> <a href="../games"> games </a></li>
+                <li> <a href="../projects"> projects </a></li>
+                <li> <a style="font-weight: bolder;" href="../tools"> tools </a></li>
+                <li> <a href="../blog/"> blog </a></li>
+                <li> <a href="../#help"> help </a></li>
+                
+            </ul>
+            <ul class="rightnav"> 
+                <a id="loginBTN" style="text-decoration: none; font-size: small;" href="../login" class="btn login"> login </a>
+                <button class="hamburger-btn" onclick="openHamburger()"> &#9776; </button>
+            </ul>
+
+        </nav>
+
+        
+        <div id="hamburgerbar" class="hamburger">
+            
+            <a href="javascript:void(0)" class="close-hamburger" onclick="closeHamburger()">  </a>
+            <a href="../games">games</a>
+            <a href="../projects">projects</a>
+            <a style="font-weight: bolder;" href="../tools">tools</a>
+            <a href="../blog">blog</a>
+            <a href="../#help">help</a>
+            
+        </div>
+        <style>
+            .calc-box { 
+                background: var(--bg); 
+                padding: 15px; 
+                border-radius: 12px; 
+                width: 100%;
+                max-width: 320px; /* Limits width on desktop, shrinks on mobile */
+            }
+            .grid {
+                display: grid;
+                gap: 8px;
+            }
+
+            .grid.standard {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .grid.extra { 
+                grid-template-columns: repeat(2, 1fr); 
+            }
+
+            .screen input { 
+                width: 100%; 
+                background: transparent; 
+                border: 1px solid #5f6368; 
+                color: var(--text); 
+                text-align: right; 
+                padding: 15px; 
+                font-size: 1.8rem; 
+                border-radius: 8px; 
+                margin-bottom: 15px; 
+                outline: none; 
+            }
+
+            input[type="button"] { 
+                background: var(--btn); 
+                color: var(--text);
+                border: none; 
+                padding: 15px 0; 
+                border-radius: 50px; 
+                font-size: 1rem; 
+                cursor: pointer; 
+                width: 100%;
+            }
+
+            input[type="button"]:hover {
+                color: var(--bg);
+                background-color: var(--text);
+            }
+
+            input[type="button"]:active {
+                background-color: aquamarine;
+            }
+
+            
+            
+            
+            
+            
+        
+            
+        </style>
+        <h1> Scientific Calculator</h1>
+        <div style="border: 2px solid; max-width: 70%; align-self: center; justify-self: center;" class="calc-box">
+            
+                <div class="screen">
+                    <input type="text" id="display" class="display" readonly/>
+                </div>
+                    
+                    <div id="standard" class="grid standard">
+                        <input type="button" value="(" onclick="add('(')">
+                        <input type="button" value=")" onclick="add(')')">
+                        <input type="button" value="%" onclick="add('%')">
+                        <input type="button" value="AC" class="ac" onclick="clr()">
+                        
+                        <input type="button" value="7" class="n" onclick="add('7')">
+                        <input type="button" value="8" class="n" onclick="add('8')">
+                        <input type="button" value="9" class="n" onclick="add('9')">
+                        <input style="background-color: rgba(255, 0, 234, 0.283);" type="button" value="/" onclick="add('/')">
+                        
+                        <input type="button" value="4" class="n" onclick="add('4')">
+                        <input type="button" value="5" class="n" onclick="add('5')">
+                        <input type="button" value="6" class="n" onclick="add('6')">
+                        <input style="background-color: rgba(255, 0, 234, 0.283);" type="button" value="x" onclick="add('*')">
+                        
+                        <input type="button" value="1" class="n" onclick="add('1')">
+                        <input type="button" value="2" class="n" onclick="add('2')">
+                        <input type="button" value="3" class="n" onclick="add('3')">
+                        <input style="background-color: rgba(255, 0, 234, 0.283);" type="button" value="-" onclick="add('-')">
+                        
+                        <input type="button" value="0" class="n" onclick="add('0')">
+                        <input type="button" value="." class="n" onclick="add('.')">
+                        <input style="background-color: rgba(127, 227, 255, 0.357);" type="button" value="=" class="eq" onclick="solve()">
+                        <input style="background-color: rgba(255, 0, 234, 0.283);" type="button" value="+" onclick="add('+')">
+                    </div>
+
+                    <div id="extra" class="grid extra" style="display:none">
+                        <input type="button" value="sin" onclick="add('Math.sin(')">
+                        <input type="button" value="cos" onclick="add('Math.cos(')">
+                        <input type="button" value="tan" onclick="add('Math.tan(')">
+                        <input type="button" value="log" onclick="add('Math.log10(')">
+                        <input type="button" value="ln" onclick="add('Math.log(')">
+                        <input type="button" value="√" onclick="add('Math.sqrt(')">
+                        <input type="button" value="π" onclick="add('Math.PI')">
+                        <input type="button" value="e" onclick="add('Math.E')">
+                    </div>
+                    <button id="togglebtn" class="btn" onclick="toggle()"> F(x) </button>
+            </div>
+            
+        </div>
+        <script>
+            const tgbtn = document.getElementById("togglebtn");
+            const d = document.getElementById('display');
+            function add(v) { if(d.value === '0') d.value = v; else d.value += v; }
+            function clr() { d.value = '0'; }
+            function solve() { try { d.value = eval(d.value); } catch { d.value = 'Error'; } }
+            function toggle() {
+                const s = document.getElementById('standard');
+                const e = document.getElementById('extra');
+                const isStandard = s.style.display !== 'none';
+                s.style.display = isStandard ? 'none' : 'grid';
+                e.style.display = isStandard ? 'grid' : 'none';
+                if (isStandard) {
+                    tgbtn.textContent = "123"
+                } else {
+                    tgbtn.textContent = "F(x)"
+                }
+            }
+</script>
+
+    </body>
+    <footer id="footer" class="footer content">
+           
+            <div class="social-footer">
+            <ul class="centernav"> 
+                <a class="social first"> > <a>
+                <li> <a class="social" href="https://github.com/cjuwuxd"> github </a></li>
+                <li> <a class="social instagram " href="https://www.instagram.com/cjuwuxd/"> instagram </a></li>
+                <li> <a class="social twitter" href="https://x.com/cjuwuxd"> twitter </a></li>
+            </ul>
+            </div>
+             <button class="btn social" popovertarget="social-menu"> 🫂 </button>
+            
+            <ul class="rightnav">
+                <button style="anchor-name: --settings-btn;"class="btn websettings" popovertarget="settings-menu"> ⚙️ </button>
+            </ul>
+            <!--website settings menu popup */-->
+
+            <div id="settings-menu" popover>
+                    <div class="popupcontent"> 
+                            Website Settings <br>
+                            <a id="soundbtn" class="settings"> 🔊 </a> <br>
+                            <a id="themebtn" onclick="changeTheme()" class="settings"> 🌙 </a>
+                    </div>
+            </div>
+
+            <!-- soical menu popup */-->
+             <div id="social-menu" popover>
+                > <br>
+                <a class="social" href="https://github.com/cjuwuxd"> github </a> <br>
+                <a class="social instagram " href="https://www.instagram.com/cjuwuxd/"> instagram </a> <br>
+                <a class="social twitter" href="https://x.com/cjuwuxd"> twitter </a>
+             </div>
+        
+    </footer>
+
+</html>
