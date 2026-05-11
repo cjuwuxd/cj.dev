@@ -99,7 +99,7 @@ function loadBlogPosts() {
                 blogFeed.appendChild(postElement);
             });
         } else {
-            console.log("No blog posts found in Firebase."); // ADD THIS LINE
+            console.log("No blog posts found in Firebase."); 
             blogFeed.innerHTML = '<p>No posts yet. Be the first to publish!</p>';
         }
     }, (error) => {
