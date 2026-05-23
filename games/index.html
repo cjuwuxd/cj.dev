@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap">
 <script src="../scripts/script.js"></script> 
 <script type="module" src="../scripts/auth.js"> </script>
+<script type="module" src="../scripts/load.js"></script>
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 </head>
     
@@ -19,37 +20,7 @@
                 <div style="align-self: center;" class="spinner"></div>
             </div>
         </div>
-        <script>
-            /* loading animation */
-            const phrases = [
-                "stuff is happening",
-                "have you tried SKRBL.ai?",
-                "hol up lemme cook",
-                "welcome to my website!",
-                "hi ;)",
-                "optimizing your experience"
-            ]
-
-            const loadingTexts = document.getElementById("loading-text");
-
-            if (loadingTexts) {
-                const random = Math.floor(Math.random() * phrases.length);
-                loadingTexts.textContent = phrases[random];
-            }
-
-
-            window.addEventListener('load', () => {
-                const loader = document.getElementById('loading-screen');
-                if (loader) {
-                    loader.classList.add('fade-out');
-                }
-                
-            
-                setTimeout(() => {
-                    loader.style.display = 'none';
-            }, 500);
-            });
-        </script>
+        
     <audio id="hoverSound" src="../assets/sounds/hover.mp3" preload="auto"></audio>
     <audio id="clickSound" src="../assets/sounds/pop.mp3" preload="auto"></audio>
         <header class="header"></header>
