@@ -66,7 +66,9 @@ function loadBlogPosts() {
     console.log('--- loadBlogPosts function started ---');
     const blogFeed = document.getElementById('blog-feed');
     const postsRef = ref(db, 'posts');
-
+    if (!blogFeed) return;
+    
+    blogFeed.innerHTML = '<div class="spinner"></div>';
     onValue(postsRef, (snapshot) => {
         console.log("Snapshot received:", snapshot.val()); // ADD THIS LINE
         blogFeed.innerHTML = '';

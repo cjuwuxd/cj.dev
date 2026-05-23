@@ -179,15 +179,5 @@ async function displayStreak() {
 }
 
 
-// show local time
-function updateTime() {
-    if (document.getElementById("help")) {
-        const now = new Date();
-    document.getElementById('localTime').innerText = now.toLocaleTimeString();
-    }
-    
-}
 
-setInterval(updateTime, 1000);
-updateTime();
 
