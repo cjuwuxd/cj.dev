@@ -1,8 +1,23 @@
 // push to firebase to save blogs to site
-import {db} from './firebase-init.js';
-import {ref, push, onValue} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import { db, auth } from './firebase-init.js'; // Import auth from init
+import { ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+// Import signInAnonymously or signInWithEmailAndPassword depending on your setup
+import { signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 document.getElementById("post-btn").addEventListener('click', publishPost);
+
+// Optional: Ensure you are authenticated as soon as the page loads
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        console.log("Authenticated user UID:", user.uid);
+    } else {
+        // If your Firebase project allows anonymous auth and matches your rule's UID:
+        signInAnonymously(auth).catch(err => console.error("Auth failed:", err));
+        
+        // OR if you use email/password, use this instead:
+        // signInWithEmailAndPassword(auth, "your-email@test.com", "yourpassword");
+    }
+});
 
 function publishPost() {
 
